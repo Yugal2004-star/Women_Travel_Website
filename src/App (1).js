@@ -248,38 +248,38 @@ const TourismWebsite = () => {
 <header className={`fixed w-full z-40 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg py-2 md:py-3' : 'bg-transparent py-4 md:py-6'}`}>        
   <nav className="container mx-auto px-4 flex items-center justify-between">
           <div className="flex items-center space-x-2 md:space-x-3">
-            <div className="p-2 md:p-3 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 shadow-lg">
-              <Compass className="w-6 h-6 md:w-8 md:h-8 text-white" />
+            <div className="p-1 md:p-2 rounded-xl bg-transparent ">
+              <img src="/images/logo.png" alt="India Tour Company" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
             </div>
             <div>
-              <span className={`text-lg md:text-2xl font-bold block ${isScrolled ? 'bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent' : 'text-white drop-shadow-lg'}`}>India Tour Company</span>
-              <span className={`text-xs font-semibold hidden md:block ${isScrolled ? 'text-rose-600' : 'text-white/90'}`}>NIDHI Certified</span>
+              <span className={`text-lg md:text-2xl font-bold block ${isScrolled ? 'bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent' : 'text-white drop-shadow-lg'}`}>India Tour Company</span>
+              <span className={`text-xs font-semibold hidden md:block ${isScrolled ? 'text-pink-900' : 'text-white/90'}`}>NIDHI Certified</span>
             </div>
           </div>
           
           <div className="hidden md:flex space-x-6 lg:space-x-8 items-center">
-            {['Home', 'About Us', 'Tours', 'Destination', 'Contact Us'].map((item) => (
-              <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-pink-600' : 'text-white hover:text-pink-200'}`}>
+            {['Home',  'Tours', 'Gallery','About Us', 'Contact Us'].map((item) => (
+              <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-[#912082]' : 'text-white hover:text-[#912082]'}`}>
                 {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full group-hover:w-full transition-all duration-300"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
               </a>
             ))}
           </div>
 
           <div className="flex items-center gap-2 md:gap-3">
-            <button className="hidden md:block px-4 lg:px-6 py-2 lg:py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full hover:shadow-xl hover:from-pink-600 hover:to-rose-600 transition text-sm lg:text-base font-semibold">
+            <a href="#contact-us" className="hidden md:block px-4 lg:px-6 py-2 lg:py-3 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-full hover:shadow-xl hover:from-[#912082] hover:to-pink-900 transition text-sm lg:text-base font-semibold">
               Enquire Now
-            </button>
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500">
+            </a>
+            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 rounded-xl bg-gradient-to-br from-[#912082] to-pink-900">
               {isMenuOpen ? <X className="text-white" size={24} /> : <Menu className="text-white" size={24} />}
             </button>
           </div>
         </nav>
 
         {isMenuOpen && (
-          <div className="md:hidden bg-white shadow-xl absolute w-full mt-3 py-4 rounded-b-2xl border-t-4 border-pink-500">
+          <div className="md:hidden bg-white shadow-xl absolute w-full mt-3 py-4 rounded-b-2xl border-t-4 border-[#912082]">
             {['Home', 'About Us', 'Tours', 'Destination', 'Contact Us'].map(item => (
-              <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="block px-6 py-3 hover:bg-gradient-to-r hover:from-pink-50 hover:to-rose-50 transition font-semibold text-gray-700 hover:text-pink-600" onClick={() => setIsMenuOpen(false)}>
+              <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="block px-6 py-3 hover:bg-gradient-to-r hover:from-pink-50 hover:to-rose-50 transition font-semibold text-gray-700 hover:text-[#912082]" onClick={() => setIsMenuOpen(false)}>
                 {item}
               </a>
             ))}
@@ -299,8 +299,8 @@ const TourismWebsite = () => {
               
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto pt-20 pb-10">
           <div className="inline-block mb-4 md:mb-6 animate-fadeInDown">
-            <div className="px-4 md:px-6 py-2 md:py-3 bg-white/95 shadow-lg rounded-full border-2 border-pink-300">
-              <span className="bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent font-bold text-sm md:text-lg">
+            <div className="px-4 md:px-6 py-2 md:py-3 bg-white/95 shadow-lg rounded-full border-2 border-[#912082]">
+              <span className="bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent font-bold text-sm md:text-lg">
                 ✨ Discover Incredible India ✨
               </span>
             </div>
@@ -315,11 +315,11 @@ const TourismWebsite = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-3 md:gap-6 justify-center px-4 animate-fadeInUp animation-delay-400">
-            <a href="#tours" className="px-6 md:px-12 py-3 md:py-5 bg-white text-pink-600 rounded-full font-bold hover:bg-pink-50 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 text-sm md:text-lg lg:text-xl">
+            <a href="#tours" className="px-6 md:px-12 py-3 md:py-5 bg-white text-pink-900 rounded-full font-bold hover:bg-pink-50 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 text-sm md:text-lg lg:text-xl">
               Explore Tours 
               <ChevronRight className="w-4 h-4 md:w-6 md:h-6" />
             </a>
-            <a href="#contact-us" className="px-6 md:px-12 py-3 md:py-5 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full font-bold hover:from-pink-600 hover:to-rose-600 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-sm md:text-lg lg:text-xl">
+            <a href="#contact-us" className="px-6 md:px-12 py-3 md:py-5 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-full font-bold hover:from-[#912082] hover:to-pink-900 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-sm md:text-lg lg:text-xl">
               Enquire Now
             </a>
           </div>
@@ -337,11 +337,11 @@ const TourismWebsite = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 md:mb-12">
             <div className="inline-block mb-3 md:mb-4">
-              <span className="px-4 md:px-6 py-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full font-bold text-sm md:text-lg shadow-xl">
+              <span className="px-4 md:px-6 py-2 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-full font-bold text-sm md:text-lg shadow-xl">
                 ✨ Our Premium Tours ✨
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-3 md:mb-6 bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent px-2">Explore India by Region</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-3 md:mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent px-2">Explore India by Region</h2>
             <p className="text-base md:text-xl lg:text-2xl text-gray-700 max-w-3xl mx-auto font-semibold px-4 mb-8 md:mb-10">
               Choose from our extensive collection of tours across India
             </p>
@@ -354,8 +354,8 @@ const TourismWebsite = () => {
                   onClick={() => setActiveRegion(region)}
                   className={`px-4 md:px-6 py-2 md:py-3 rounded-full font-bold text-xs md:text-sm transition-all duration-300 transform hover:scale-105 ${
                     activeRegion === region
-                      ? 'bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-xl'
-                      : 'bg-white text-gray-700 border-2 border-pink-200 hover:border-pink-500'
+                      ? 'bg-gradient-to-r from-[#912082] to-pink-900 text-white shadow-xl'
+                      : 'bg-white text-gray-700 border-2 border-pink-200 hover:border-[#912082]'
                   }`}
                 >
                   {region}
@@ -369,26 +369,26 @@ const TourismWebsite = () => {
             <div className="space-y-12">
               {Object.entries(content.tours).map(([region, tourList]) => (
                 <div key={region}>
-                  <h3 className="text-2xl md:text-4xl font-black mb-6 bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">{region}</h3>
+                  <h3 className="text-2xl md:text-4xl font-black mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent">{region}</h3>
                   <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                     {tourList.slice(0, 3).map((tour) => (
                       <div key={tour.id} className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 group">
                         <div className="relative h-48 md:h-56 overflow-hidden">
                           <img src={tour.image} alt={tour.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                          <div className="absolute top-3 right-3 bg-gradient-to-r from-pink-500 to-rose-500 px-3 py-1.5 rounded-full text-white font-bold text-xs shadow-lg">
+                          <div className="absolute top-3 right-3 bg-gradient-to-r from-[#912082] to-pink-900 px-3 py-1.5 rounded-full text-white font-bold text-xs shadow-lg">
                             {tour.duration}
                           </div>
-                          <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-pink-600 font-black text-sm shadow-lg">
+                          {/* <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-[#912082] font-black text-sm shadow-lg">
                             {tour.price}
-                          </div>
+                          </div> */}
                           <div className="absolute bottom-3 left-3 right-3">
                             <h4 className="text-xl md:text-2xl font-black text-white drop-shadow-lg line-clamp-2 mb-1">{tour.name}</h4>
                             <p className="text-white/90 text-xs font-semibold line-clamp-2">{tour.description}</p>
                           </div>
                         </div>
                         <div className="p-4 space-y-3">
-                          <div className="flex items-start gap-2 text-pink-600">
+                          <div className="flex items-start gap-2 text-[#912082]">
                             <MapPinIcon className="w-4 h-4 mt-0.5 flex-shrink-0" />
                             <span className="text-sm font-bold line-clamp-1">{tour.destinations}</span>
                           </div>
@@ -397,7 +397,7 @@ const TourismWebsite = () => {
                             <p className="text-xs font-bold text-gray-500 uppercase">Highlights:</p>
                             <div className="flex flex-wrap gap-1.5">
                               {tour.highlights.slice(0, 3).map((highlight, i) => (
-                                <span key={i} className="px-2 py-1 bg-gradient-to-r from-pink-50 to-rose-50 text-pink-700 rounded-lg text-xs font-semibold border border-pink-200">
+                                <span key={i} className="px-2 py-1 bg-gradient-to-r from-pink-50 to-rose-50 text-pink-900 rounded-lg text-xs font-semibold border border-pink-200">
                                   {highlight}
                                 </span>
                               ))}
@@ -413,7 +413,7 @@ const TourismWebsite = () => {
                             <div className="flex items-center justify-between text-xs text-gray-600 mb-3">
                               <span className="font-semibold">Starting from: {tour.startFrom}</span>
                             </div>
-                            <button className="w-full py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-xl font-bold hover:from-pink-600 hover:to-rose-600 transition-all duration-300 flex items-center justify-center gap-2 text-sm shadow-md hover:shadow-xl">
+                            <button className="w-full py-3 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-xl font-bold hover:from-[#912082] hover:to-pink-900 transition-all duration-300 flex items-center justify-center gap-2 text-sm shadow-md hover:shadow-xl">
                               View Details <ChevronRight className="w-4 h-4" />
                             </button>
                           </div>
@@ -424,7 +424,7 @@ const TourismWebsite = () => {
                   {tourList.length > 3 && (
                     <button 
                       onClick={() => setActiveRegion(region)}
-                      className="mt-4 px-6 py-2 bg-white border-2 border-pink-500 text-pink-600 rounded-full font-bold hover:bg-pink-50 transition"
+                      className="mt-4 px-6 py-2 bg-white border-2 border-[#912082] text-[#912082] rounded-full font-bold hover:bg-[#912082] hover:text-white transition"
                     >
                       View all {tourList.length} {region} tours →
                     </button>
@@ -434,26 +434,26 @@ const TourismWebsite = () => {
             </div>
           ) : (
             <div>
-              <h3 className="text-2xl md:text-4xl font-black mb-6 bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent text-center">{activeRegion} Tours</h3>
+              <h3 className="text-2xl md:text-4xl font-black mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent text-center">{activeRegion} Tours</h3>
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                 {content.tours[activeRegion]?.map((tour) => (
                   <div key={tour.id} className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 group">
                     <div className="relative h-48 md:h-56 overflow-hidden">
                       <img src={tour.image} alt={tour.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                      <div className="absolute top-3 right-3 bg-gradient-to-r from-pink-500 to-rose-500 px-3 py-1.5 rounded-full text-white font-bold text-xs shadow-lg">
+                      <div className="absolute top-3 right-3 bg-gradient-to-r from-[#912082] to-pink-900 px-3 py-1.5 rounded-full text-white font-bold text-xs shadow-lg">
                         {tour.duration}
                       </div>
-                      <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-pink-600 font-black text-sm shadow-lg">
+                      {/* <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-[#912082] font-black text-sm shadow-lg">
                         {tour.price}
-                      </div>
+                      </div> */}
                       <div className="absolute bottom-3 left-3 right-3">
                         <h4 className="text-xl md:text-2xl font-black text-white drop-shadow-lg line-clamp-2 mb-1">{tour.name}</h4>
                         <p className="text-white/90 text-xs font-semibold line-clamp-2">{tour.description}</p>
                       </div>
                     </div>
                     <div className="p-4 space-y-3">
-                      <div className="flex items-start gap-2 text-pink-600">
+                      <div className="flex items-start gap-2 text-[#912082]">
                         <MapPinIcon className="w-4 h-4 mt-0.5 flex-shrink-0" />
                         <span className="text-sm font-bold line-clamp-2">{tour.destinations}</span>
                       </div>
@@ -462,7 +462,7 @@ const TourismWebsite = () => {
                         <p className="text-xs font-bold text-gray-500 uppercase">Highlights:</p>
                         <div className="flex flex-wrap gap-1.5">
                           {tour.highlights.slice(0, 3).map((highlight, i) => (
-                            <span key={i} className="px-2 py-1 bg-gradient-to-r from-pink-50 to-rose-50 text-pink-700 rounded-lg text-xs font-semibold border border-pink-200">
+                            <span key={i} className="px-2 py-1 bg-gradient-to-r from-pink-50 to-rose-50 text-pink-900 rounded-lg text-xs font-semibold border border-pink-200">
                               {highlight}
                             </span>
                           ))}
@@ -478,9 +478,9 @@ const TourismWebsite = () => {
                         <div className="flex items-center justify-between text-xs text-gray-600 mb-3">
                           <span className="font-semibold">Starting from: {tour.startFrom}</span>
                         </div>
-                        <button className="w-full py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-xl font-bold hover:from-pink-600 hover:to-rose-600 hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 text-sm">
+                        <a href="#contact-us" className="w-full py-3 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-xl font-bold hover:from-[#912082] hover:to-pink-900 hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 text-sm">
                           Enquire Now <ChevronRight className="w-4 h-4" />
-                        </button>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -489,7 +489,7 @@ const TourismWebsite = () => {
             </div>
           )}
         </div>
-     </section>
+      </section>
 
      
       
@@ -499,11 +499,11 @@ const TourismWebsite = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 md:mb-16">
             <div className="inline-block mb-3 md:mb-4">
-              <span className="px-4 md:px-6 py-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full font-bold text-sm md:text-lg shadow-xl">
+              <span className="px-4 md:px-6 py-2 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-full font-bold text-sm md:text-lg shadow-xl">
                 📸 Our Travel Gallery 📸
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-3 md:mb-4 bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent px-2">Captured Moments</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-3 md:mb-4 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent px-2">Captured Moments</h2>
             <p className="text-sm md:text-lg lg:text-xl text-gray-600 font-semibold px-4">Real photos from our amazing tours</p>
           </div>
         </div>
@@ -540,22 +540,22 @@ const TourismWebsite = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-8 md:mb-16">
             <div className="inline-block mb-3 md:mb-4">
-              <span className="px-4 md:px-6 py-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full font-bold text-sm md:text-lg shadow-xl">
+              <span className="px-4 md:px-6 py-2 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-full font-bold text-sm md:text-lg shadow-xl">
                 💬 Happy Stories 💬
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-3 md:mb-4 bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent px-2">What Travelers Say</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-3 md:mb-4 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent px-2">What Travelers Say</h2>
             <p className="text-sm md:text-lg lg:text-xl text-gray-600 font-semibold px-4">Hear from our happy explorers</p>
           </div>
 
           <div className="max-w-4xl mx-auto relative">
             {content.testimonials.map((testimonial, idx) => (
               <div key={idx} className={`transition-all duration-500 ${idx === activeTestimonial ? 'opacity-100 scale-100' : 'opacity-0 scale-95 absolute inset-0 pointer-events-none'}`}>
-                <div className="bg-white rounded-2xl md:rounded-3xl shadow-2xl p-6 md:p-12 border-2 md:border-4 border-pink-200">
+                <div className="bg-white rounded-2xl md:rounded-3xl shadow-2xl p-6 md:p-12 border-2 md:border-4 border-[#912082]">
                   <div className="flex items-center gap-3 md:gap-6 mb-4 md:mb-8">
-                    <img src={testimonial.image} alt={testimonial.name} className="w-16 h-16 md:w-24 md:h-24 rounded-full object-cover border-2 md:border-4 border-pink-300 shadow-lg" />
+                    <img src={testimonial.image} alt={testimonial.name} className="w-16 h-16 md:w-24 md:h-24 rounded-full object-cover border-2 md:border-4 border-[#912082] shadow-lg" />
                     <div>
-                      <h4 className="text-xl md:text-2xl lg:text-3xl font-black bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">{testimonial.name}</h4>
+                      <h4 className="text-xl md:text-2xl lg:text-3xl font-black bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent">{testimonial.name}</h4>
                       <p className="text-gray-600 font-semibold text-sm md:text-base">{testimonial.location}</p>
                       <div className="flex gap-0.5 md:gap-1 mt-1 md:mt-2">
                         {[...Array(testimonial.rating)].map((_, i) => (
@@ -574,7 +574,7 @@ const TourismWebsite = () => {
                 <button
                   key={idx}
                   onClick={() => setActiveTestimonial(idx)}
-                  className={`h-2 md:h-4 rounded-full transition-all duration-300 ${idx === activeTestimonial ? 'bg-gradient-to-r from-pink-500 to-rose-500 w-8 md:w-16' : 'bg-pink-200 w-2 md:w-4'}`}
+                  className={`h-2 md:h-4 rounded-full transition-all duration-300 ${idx === activeTestimonial ? 'bg-gradient-to-r from-[#912082] to-pink-900 w-8 md:w-16' : 'bg-pink-200 w-2 md:w-4'}`}
                 />
               ))}
             </div>
@@ -589,33 +589,33 @@ const TourismWebsite = () => {
             <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
               <div className="relative order-2 md:order-1">
                 <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80" alt="About Us" className="rounded-2xl md:rounded-3xl shadow-2xl w-full" />
-                <div className="absolute -top-3 -right-3 md:-top-4 md:-right-4 w-12 h-12 md:w-20 md:h-20 bg-gradient-to-br from-pink-500 to-rose-500 rounded-full flex items-center justify-center shadow-xl">
+                <div className="absolute -top-3 -right-3 md:-top-4 md:-right-4 w-12 h-12 md:w-20 md:h-20 bg-gradient-to-br from-[#912082] to-pink-900 rounded-full flex items-center justify-center shadow-xl">
                   <Heart className="w-6 h-6 md:w-10 md:h-10 text-white" />
                 </div>
               </div>
               <div className="order-1 md:order-2">
-                <div className="inline-block px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-full font-bold mb-4 md:mb-6 shadow-lg text-xs md:text-base">
+                <div className="inline-block px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-full font-bold mb-4 md:mb-6 shadow-lg text-xs md:text-base">
                   ✨ NIDHI Certified Company ✨
                 </div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">20 Years of Excellence</h2>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent">20 Years of Excellence</h2>
                 <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed mb-3 md:mb-6 font-semibold">
-                  A NIDHI registered company under the Ministry of Tourism and Maharashtra Tourism, we are a <span className="font-black text-pink-600">women-led organization</span> that aims to provide safe, secure, and happy vacations for all.
+                  A NIDHI registered company under the Ministry of Tourism and Maharashtra Tourism, we are a <span className="font-black text-[#912082]">women-led organization</span> that aims to provide safe, secure, and happy vacations for all.
                 </p>
                 <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed mb-4 md:mb-6 font-semibold">
                   Understanding the basic needs of women travelers, our coordinators make every journey memorable.
                 </p>
                 <div className="space-y-3 md:space-y-4">
                   <div className="flex items-start gap-2 md:gap-3 bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl md:rounded-2xl p-3 md:p-4 shadow-lg">
-                    <CheckCircle className="w-5 h-5 md:w-8 md:h-8 text-pink-600 mt-0.5 md:mt-1 flex-shrink-0" />
-                    <p className="text-gray-700 font-bold text-sm md:text-base"><span className="text-pink-600">IATA Certified</span> professionals with HMI training</p>
+                    <CheckCircle className="w-5 h-5 md:w-8 md:h-8 text-[#912082] mt-0.5 md:mt-1 flex-shrink-0" />
+                    <p className="text-gray-700 font-bold text-sm md:text-base"><span className="text-[#912082]">IATA Certified</span> professionals with HMI training</p>
                   </div>
                   <div className="flex items-start gap-2 md:gap-3 bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl md:rounded-2xl p-3 md:p-4 shadow-lg">
-                    <CheckCircle className="w-5 h-5 md:w-8 md:h-8 text-pink-600 mt-0.5 md:mt-1 flex-shrink-0" />
-                    <p className="text-gray-700 font-bold text-sm md:text-base"><span className="text-pink-600">500+ Tours</span> successfully conducted</p>
+                    <CheckCircle className="w-5 h-5 md:w-8 md:h-8 text-[#912082] mt-0.5 md:mt-1 flex-shrink-0" />
+                    <p className="text-gray-700 font-bold text-sm md:text-base"><span className="text-[#912082]">500+ Tours</span> successfully conducted</p>
                   </div>
                   <div className="flex items-start gap-2 md:gap-3 bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl md:rounded-2xl p-3 md:p-4 shadow-lg">
-                    <CheckCircle className="w-5 h-5 md:w-8 md:h-8 text-pink-600 mt-0.5 md:mt-1 flex-shrink-0" />
-                    <p className="text-gray-700 font-bold text-sm md:text-base"><span className="text-pink-600">Custom Itineraries</span> tailored for you</p>
+                    <CheckCircle className="w-5 h-5 md:w-8 md:h-8 text-[#912082] mt-0.5 md:mt-1 flex-shrink-0" />
+                    <p className="text-gray-700 font-bold text-sm md:text-base"><span className="text-[#912082]">Custom Itineraries</span> tailored for you</p>
                   </div>
                 </div>
               </div>
@@ -632,52 +632,52 @@ const TourismWebsite = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto text-center mb-8 md:mb-12">
             <div className="inline-block mb-3 md:mb-4">
-              <span className="px-4 md:px-6 py-2 bg-gradient-to-r from-pink-to-r from-pink-500 to-rose-500 text-white rounded-full font-bold text-sm md:text-lg shadow-xl">
+              <span className="px-4 md:px-6 py-2 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-full font-bold text-sm md:text-lg shadow-xl">
                 📞 Get In Touch 📞
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-3 md:mb-6 bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent px-2">Let's Plan Together</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-3 md:mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent px-2">Let's Plan Together</h2>
             <p className="text-lg md:text-xl lg:text-2xl text-gray-700 mb-4 md:mb-8 font-bold px-4">Ready for an unforgettable adventure?</p>
           </div>
           
           <div className="max-w-6xl mx-auto">
             <div className="grid sm:grid-cols-3 gap-4 md:gap-8 mb-8 md:mb-12">
               <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl md:rounded-3xl p-4 md:p-8 text-center hover:shadow-xl transition transform hover:scale-105">
-                <div className="w-12 h-12 md:w-20 md:h-20 bg-gradient-to-br from-pink-500 to-rose-500 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-lg">
+                <div className="w-12 h-12 md:w-20 md:h-20 bg-gradient-to-br from-[#912082] to-pink-900 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-lg">
                   <Phone className="w-6 h-6 md:w-10 md:h-10 text-white" />
                 </div>
-                <h4 className="font-black bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent text-lg md:text-xl lg:text-2xl mb-2">Call Us</h4>
-                <p className="text-gray-600 font-semibold text-xs md:text-sm">+91 98765 43210</p>
-                <p className="text-gray-600 font-semibold text-xs md:text-sm">+91 98765 43211</p>
+                <h4 className="font-black bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent text-lg md:text-xl lg:text-2xl mb-2">Call Us</h4>
+                <a href="tel:+918767764784" className="text-gray-600 font-semibold text-xs md:text-sm hover:text-[#912082] transition block">+91 87677 64784</a>
+                <a href="tel:+919373757002" className="text-gray-600 font-semibold text-xs md:text-sm hover:text-[#912082] transition block">+91 93737 57002</a>
               </div>
               <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl md:rounded-3xl p-4 md:p-8 text-center hover:shadow-xl transition transform hover:scale-105">
-                <div className="w-12 h-12 md:w-20 md:h-20 bg-gradient-to-br from-pink-500 to-rose-500 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-lg">
+                <div className="w-12 h-12 md:w-20 md:h-20 bg-gradient-to-br from-[#912082] to-pink-900 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-lg">
                   <Mail className="w-6 h-6 md:w-10 md:h-10 text-white" />
                 </div>
-                <h4 className="font-black bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent text-lg md:text-xl lg:text-2xl mb-2">Email Us</h4>
-                <p className="text-gray-600 font-semibold text-xs md:text-sm">info@indiatour.com</p>
-                <p className="text-gray-600 font-semibold text-xs md:text-sm">tours@indiatour.com</p>
+                <h4 className="font-black bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent text-lg md:text-xl lg:text-2xl mb-2">Email Us</h4>
+                <a href="mailto:itcindia05@gmail.com" className="text-gray-600 font-semibold text-xs md:text-sm hover:text-[#912082] transition block">itcindia05@gmail.com</a>
               </div>
               <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl md:rounded-3xl p-4 md:p-8 text-center hover:shadow-xl transition transform hover:scale-105 sm:col-span-3 lg:col-span-1">
-                <div className="w-12 h-12 md:w-20 md:h-20 bg-gradient-to-br from-pink-500 to-rose-500 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-lg">
+                <div className="w-12 h-12 md:w-20 md:h-20 bg-gradient-to-br from-[#912082] to-pink-900 rounded-xl md:rounded-2xl flex items-center justify-center mx-auto mb-3 md:mb-4 shadow-lg">
                   <MapPin className="w-6 h-6 md:w-10 md:h-10 text-white" />
                 </div>
-                <h4 className="font-black bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent text-lg md:text-xl lg:text-2xl mb-2">Visit Us</h4>
-                <p className="text-gray-600 font-semibold text-xs md:text-sm">Mumbai, Maharashtra</p>
-                <p className="text-gray-600 font-semibold text-xs md:text-sm">India</p>
+                <h4 className="font-black bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent text-lg md:text-xl lg:text-2xl mb-2">Visit Us</h4>
+                <a href="https://maps.app.goo.gl/fHosnv7wEnQE99oF6" target="_blank" rel="noopener noreferrer" className="text-gray-600 font-semibold text-xs md:text-sm hover:text-[#912082] transition">
+                 9, Suryodaya, Gazetted Officers Colony, West High Court Road, Civillines, Nagpur 440001
+                </a>
               </div>
             </div>
 
             <div className="bg-gradient-to-br from-pink-50 to-rose-50 rounded-2xl md:rounded-3xl shadow-xl p-4 md:p-8 lg:p-12 border-2 md:border-4 border-pink-200">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-black mb-4 md:mb-6 bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">Send Us a Message</h3>
+              <h3 className="text-2xl md:text-3xl lg:text-4xl font-black mb-4 md:mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent">Send Us a Message</h3>
               <form className="space-y-4 md:space-y-6">
                 <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-                  <input type="text" placeholder="Your Name" className="w-full px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl border-2 border-pink-300 focus:border-pink-500 focus:outline-none transition bg-white font-semibold text-sm md:text-base" />
-                  <input type="email" placeholder="Your Email" className="w-full px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl border-2 border-pink-300 focus:border-pink-500 focus:outline-none transition bg-white font-semibold text-sm md:text-base" />
+                  <input type="text" placeholder="Your Name" className="w-full px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl border-2 border-pink-300 focus:border-[#912082] focus:outline-none transition bg-white font-semibold text-sm md:text-base" />
+                  <input type="email" placeholder="Your Email" className="w-full px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl border-2 border-pink-300 focus:border-[#912082] focus:outline-none transition bg-white font-semibold text-sm md:text-base" />
                 </div>
-                <input type="tel" placeholder="Phone Number" className="w-full px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl border-2 border-pink-300 focus:border-pink-500 focus:outline-none transition bg-white font-semibold text-sm md:text-base" />
-                <textarea placeholder="Tell us about your dream vacation..." rows="4" className="w-full px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl border-2 border-pink-300 focus:border-pink-500 focus:outline-none transition resize-none bg-white font-semibold text-sm md:text-base"></textarea>
-                <button type="submit" className="w-full py-3 md:py-5 bg-gradient-to-r from-pink-500 to-rose-500 text-white rounded-xl md:rounded-2xl font-black text-base md:text-lg lg:text-xl hover:from-pink-600 hover:to-rose-600 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+                <input type="tel" placeholder="Phone Number" className="w-full px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl border-2 border-pink-300 focus:border-[#912082] focus:outline-none transition bg-white font-semibold text-sm md:text-base" />
+                <textarea placeholder="Tell us about your dream vacation..." rows="4" className="w-full px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl border-2 border-pink-300 focus:border-[#912082] focus:outline-none transition resize-none bg-white font-semibold text-sm md:text-base"></textarea>
+                <button type="submit" className="w-full py-3 md:py-5 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-xl md:rounded-2xl font-black text-base md:text-lg lg:text-xl hover:from-[#912082] hover:to-pink-900 hover:shadow-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
                   Submit Inquiry
                   <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
                 </button>
@@ -685,13 +685,13 @@ const TourismWebsite = () => {
             </div>
 
             <div className="flex justify-center gap-3 md:gap-6 mt-8 md:mt-12">
-              <a href="https://facebook.com" className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-pink-500 to-rose-500 rounded-xl md:rounded-2xl flex items-center justify-center hover:from-pink-600 hover:to-rose-600 hover:scale-110 transition-all duration-300 shadow-lg">
+              <a href="https://facebook.com" className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-[#912082] to-pink-900 rounded-xl md:rounded-2xl flex items-center justify-center hover:from-[#912082] hover:to-pink-900 hover:scale-110 transition-all duration-300 shadow-lg">
                 <Facebook className="w-6 h-6 md:w-8 md:h-8 text-white" />
               </a>
-              <a href="https://instagram.com" className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-pink-500 to-rose-500 rounded-xl md:rounded-2xl flex items-center justify-center hover:from-pink-600 hover:to-rose-600 hover:scale-110 transition-all duration-300 shadow-lg">
+              <a href="https://instagram.com" className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-[#912082] to-pink-900 rounded-xl md:rounded-2xl flex items-center justify-center hover:from-[#912082] hover:to-pink-900 hover:scale-110 transition-all duration-300 shadow-lg">
                 <Instagram className="w-6 h-6 md:w-8 md:h-8 text-white" />
               </a>
-              <a href="https://twitter.com" className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-pink-500 to-rose-500 rounded-xl md:rounded-2xl flex items-center justify-center hover:from-pink-600 hover:to-rose-600 hover:scale-110 transition-all duration-300 shadow-lg">
+              <a href="https://twitter.com" className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-[#912082] to-pink-900 rounded-xl md:rounded-2xl flex items-center justify-center hover:from-[#912082] hover:to-pink-900 hover:scale-110 transition-all duration-300 shadow-lg">
                 <Twitter className="w-6 h-6 md:w-8 md:h-8 text-white" />
               </a>
             </div>
@@ -700,49 +700,46 @@ const TourismWebsite = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-br from-pink-900 to-rose-900 text-white py-8 md:py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-6 md:mb-8">
-            <div className="col-span-2 md:col-span-1">
-              <div className="flex items-center gap-2 mb-3 md:mb-4">
-                <div className="p-1.5 md:p-2 bg-white/20 rounded-lg md:rounded-xl">
-                  <Compass className="w-6 h-6 md:w-8 md:h-8 text-white" />
-                </div>
-                <span className="text-lg md:text-2xl font-black">India Tour Company</span>
-              </div>
-              <p className="text-white/90 font-semibold text-xs md:text-sm">Safe journeys across incredible India.</p>
-            </div>
-            <div>
-              <h5 className="font-black text-base md:text-xl mb-3 md:mb-4">Quick Links</h5>
-              <ul className="space-y-1 md:space-y-2 text-white/80 font-semibold text-xs md:text-sm">
-                <li><a href="#home" className="hover:text-white transition">Home</a></li>
-                <li><a href="#tours" className="hover:text-white transition">Tours</a></li>
-                <li><a href="#about-us" className="hover:text-white transition">About Us</a></li>
-                <li><a href="#contact-us" className="hover:text-white transition">Contact Us</a></li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-black text-base md:text-xl mb-3 md:mb-4">Popular Tours</h5>
-              <ul className="space-y-1 md:space-y-2 text-white/80 font-semibold text-xs md:text-sm">
-                <li><a href="#tours" className="hover:text-white transition">Golden Triangle</a></li>
-                <li><a href="#tours" className="hover:text-white transition">Kerala</a></li>
-                <li><a href="#tours" className="hover:text-white transition">Rajasthan</a></li>
-                <li><a href="#tours" className="hover:text-white transition">Ladakh</a></li>
-              </ul>
-            </div>
-            <div className="col-span-2 md:col-span-1">
-              <h5 className="font-black text-base md:text-xl mb-3 md:mb-4">Newsletter ✉️</h5>
-              <p className="text-white/80 mb-3 md:mb-4 font-semibold text-xs md:text-sm">Get travel tips & offers</p>
-              <input type="email" placeholder="Your email" className="w-full px-3 md:px-4 py-2 md:py-3 rounded-lg md:rounded-xl bg-white/20 text-white placeholder-white/60 border border-white/30 focus:outline-none focus:border-white font-semibold text-xs md:text-sm" />
-              <button className="w-full mt-2 md:mt-3 px-3 md:px-4 py-2 md:py-3 bg-white text-pink-600 rounded-lg md:rounded-xl font-black hover:bg-pink-50 hover:shadow-xl transition text-xs md:text-sm">Subscribe 🚀</button>
-            </div>
-          </div>
-          <div className="border-t border-white/20 pt-6 md:pt-8 text-center">
-            <p className="text-white/90 font-semibold text-xs md:text-sm">&copy; 2026 India Tour Company. All rights reserved.</p>
-            <p className="text-white/80 mt-1 md:mt-2 font-semibold text-xs md:text-sm">✨ NIDHI Registered | IATA Certified | Ministry of Tourism ✨</p>
-          </div>
+      <footer className="bg-[#912082] text-white py-8 md:py-12">
+  <div className="container mx-auto px-4">
+    
+    <div className="grid grid-cols-3 md:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
+      <div>
+        <h5 className="font-black text-base md:text-xl mb-3 md:mb-4">Quick Links</h5>
+        <ul className="space-y-1 md:space-y-2 text-white/80 font-semibold text-xs md:text-sm">
+          <li><a href="#home" className="hover:text-white transition">Home</a></li>
+          <li><a href="#tours" className="hover:text-white transition">Tours</a></li>
+          <li><a href="#about-us" className="hover:text-white transition">About Us</a></li>
+          <li><a href="#contact-us" className="hover:text-white transition">Contact Us</a></li>
+        </ul>
+      </div>
+      
+      <div>
+        <h5 className="font-black text-base md:text-xl mb-3 md:mb-4">Popular Tours</h5>
+        <ul className="space-y-1 md:space-y-2 text-white/80 font-semibold text-xs md:text-sm">
+          <li><a href="#tours" className="hover:text-white transition">Golden Triangle</a></li>
+          <li><a href="#tours" className="hover:text-white transition">Kerala</a></li>
+          <li><a href="#tours" className="hover:text-white transition">Rajasthan</a></li>
+          <li><a href="#tours" className="hover:text-white transition">Ladakh</a></li>
+        </ul>
+      </div>
+      <div className="flex justify-center mb-4 md:mb-6">
+        <div className="p-2 md:p-3 bg-transparent rounded-xl md:rounded-2xl ">
+          <img src="/images/logo1.jpeg" alt="India Tour Company" className="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 object-contain shadow-lg" />
         </div>
-      </footer>
+      </div>
+    </div>
+    
+    <div className="border-t border-white/20 pt-6 md:pt-8">
+      
+      <div className="text-center">
+        <p className="text-white/90 font-semibold text-xs md:text-sm">&copy; 2026 India Tour Company. All rights reserved.</p>
+        <p className="text-white/80 mt-1 md:mt-2 font-semibold text-xs md:text-sm">✨ NIDHI Registered | IATA Certified | Ministry of Tourism ✨</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
 
       <style>{`
   html {
@@ -816,15 +813,15 @@ const TourismWebsite = () => {
   position: relative;
   flex-shrink: 0;
   overflow: hidden;
-  border: 4px solid #f43f5e;
-  box-shadow: 0 8px 24px rgba(244, 63, 94, 0.3);
+  border: 4px solid #912082;
+  box-shadow: 0 8px 24px rgba(144, 32, 130, 0.3);
   transition: all 0.4s ease;
 }
 
 .gallery-brick:hover {
-  border-color: #fb7185;
+  border-color: #912082;
   transform: scale(1.05);
-  box-shadow: 0 20px 40px rgba(244, 63, 94, 0.5);
+  box-shadow: 0 20px 40px rgba(144, 32, 130, 0.5);
 }
 
   /* Large brick - dominant size */
@@ -853,22 +850,22 @@ const TourismWebsite = () => {
 
   @media (max-width: 768px) {
     .brick-large {
-      width: 250px;
+      width: 350px;
       height: 180px;
     }
 
     .brick-wide {
-      width: 220px;
+      width: 320px;
       height: 180px;
     }
 
     .brick-tall {
-      width: 150px;
+      width: 250px;
       height: 180px;
     }
 
     .brick-medium {
-      width: 200px;
+      width: 300px;
       height: 180px;
     }
   }
@@ -899,9 +896,8 @@ const TourismWebsite = () => {
 .gallery-brick {
   animation: rotateBorder 4s linear infinite;
 }
-`}
-  </style>
-</div>
+`}</style>
+    </div>
   );
 };
 
