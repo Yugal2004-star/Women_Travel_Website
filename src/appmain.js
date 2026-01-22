@@ -481,6 +481,7 @@ const IndiaTourWebsite = () => {
           </div>
         </div>
       </section>
+      
 
       {/* Contact Section */}
       <section id="contact" className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 lg:px-12 bg-white">
