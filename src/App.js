@@ -36,7 +36,7 @@ const TourismWebsite = () => {
     ],
     testimonials: [
       { name: "Priya Sharma", location: "Mumbai", rating: 5, text: "Amazing experience! The guides made us feel so safe and comfortable. Highly recommended!", image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80" },
-      { name: "Anjali Reddy", location: "Bangalore", rating: 5, text: "Best tour operator. Every detail was perfectly planned and executed.", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&q=80" },
+      { name: "Anjali Reddy", location: "Bangalore", rating: 5, text: "Best tour operator. Every detail was perfectly planned and executed frryccdyuxgkffiyfyjfyuikgyigiygfyjygyjgy.", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&q=80" },
       { name: "Meera Patel", location: "Delhi", rating: 5, text: "Professional, caring, and knowledgeable. Made our journey truly memorable!", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&q=80" }
     ],
     tours: {
