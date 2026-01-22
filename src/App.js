@@ -332,6 +332,51 @@ const TourismWebsite = () => {
         </div>
       </section>
 
+      
+             {/* About Us Section */}
+      <section id="about-us" className="py-12 md:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
+              <div className="relative order-2 md:order-1">
+                <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80" alt="About Us" className="rounded-2xl md:rounded-3xl shadow-2xl w-full" />
+                <div className="absolute -top-3 -right-3 md:-top-4 md:-right-4 w-12 h-12 md:w-20 md:h-20 bg-gradient-to-br from-[#912082] to-pink-900 rounded-full flex items-center justify-center shadow-xl">
+                  <Heart className="w-6 h-6 md:w-10 md:h-10 text-white" />
+                </div>
+              </div>
+              <div className="order-1 md:order-2">
+                <div className="inline-block px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-full font-bold mb-4 md:mb-6 shadow-lg text-xs md:text-base">
+                  ✨ NIDHI Certified Company ✨
+                </div>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent">20 Years of Excellence</h2>
+                <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed mb-3 md:mb-6 font-semibold">
+                  A NIDHI registered company under the Ministry of Tourism and Maharashtra Tourism, we are a <span className="font-black text-[#912082]">women-led organization</span> that aims to provide safe, secure, and happy vacations for all.
+                </p>
+                <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed mb-4 md:mb-6 font-semibold">
+                  Understanding the basic needs of women travelers, our coordinators make every journey memorable.
+                </p>
+                <div className="space-y-3 md:space-y-4">
+                  <div className="flex items-start gap-2 md:gap-3 bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl md:rounded-2xl p-3 md:p-4 shadow-lg">
+                    <CheckCircle className="w-5 h-5 md:w-8 md:h-8 text-[#912082] mt-0.5 md:mt-1 flex-shrink-0" />
+                    <p className="text-gray-700 font-bold text-sm md:text-base"><span className="text-[#912082]">IATA Certified</span> professionals with HMI training</p>
+                  </div>
+                  <div className="flex items-start gap-2 md:gap-3 bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl md:rounded-2xl p-3 md:p-4 shadow-lg">
+                    <CheckCircle className="w-5 h-5 md:w-8 md:h-8 text-[#912082] mt-0.5 md:mt-1 flex-shrink-0" />
+                    <p className="text-gray-700 font-bold text-sm md:text-base"><span className="text-[#912082]">500+ Tours</span> successfully conducted</p>
+                  </div>
+                  <div className="flex items-start gap-2 md:gap-3 bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl md:rounded-2xl p-3 md:p-4 shadow-lg">
+                    <CheckCircle className="w-5 h-5 md:w-8 md:h-8 text-[#912082] mt-0.5 md:mt-1 flex-shrink-0" />
+                    <p className="text-gray-700 font-bold text-sm md:text-base"><span className="text-[#912082]">Custom Itineraries</span> tailored for you</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
       {/* Tours Section */}
       <section id="tours" className="py-12 md:py-24 bg-gradient-to-br from-pink-50 to-rose-50">
         <div className="container mx-auto px-4">
@@ -577,48 +622,6 @@ const TourismWebsite = () => {
                   className={`h-2 md:h-4 rounded-full transition-all duration-300 ${idx === activeTestimonial ? 'bg-gradient-to-r from-[#912082] to-pink-900 w-8 md:w-16' : 'bg-pink-200 w-2 md:w-4'}`}
                 />
               ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-       {/* About Us Section */}
-      <section id="about-us" className="py-12 md:py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
-              <div className="relative order-2 md:order-1">
-                <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80" alt="About Us" className="rounded-2xl md:rounded-3xl shadow-2xl w-full" />
-                <div className="absolute -top-3 -right-3 md:-top-4 md:-right-4 w-12 h-12 md:w-20 md:h-20 bg-gradient-to-br from-[#912082] to-pink-900 rounded-full flex items-center justify-center shadow-xl">
-                  <Heart className="w-6 h-6 md:w-10 md:h-10 text-white" />
-                </div>
-              </div>
-              <div className="order-1 md:order-2">
-                <div className="inline-block px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-full font-bold mb-4 md:mb-6 shadow-lg text-xs md:text-base">
-                  ✨ NIDHI Certified Company ✨
-                </div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent">20 Years of Excellence</h2>
-                <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed mb-3 md:mb-6 font-semibold">
-                  A NIDHI registered company under the Ministry of Tourism and Maharashtra Tourism, we are a <span className="font-black text-[#912082]">women-led organization</span> that aims to provide safe, secure, and happy vacations for all.
-                </p>
-                <p className="text-sm md:text-base lg:text-lg text-gray-700 leading-relaxed mb-4 md:mb-6 font-semibold">
-                  Understanding the basic needs of women travelers, our coordinators make every journey memorable.
-                </p>
-                <div className="space-y-3 md:space-y-4">
-                  <div className="flex items-start gap-2 md:gap-3 bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl md:rounded-2xl p-3 md:p-4 shadow-lg">
-                    <CheckCircle className="w-5 h-5 md:w-8 md:h-8 text-[#912082] mt-0.5 md:mt-1 flex-shrink-0" />
-                    <p className="text-gray-700 font-bold text-sm md:text-base"><span className="text-[#912082]">IATA Certified</span> professionals with HMI training</p>
-                  </div>
-                  <div className="flex items-start gap-2 md:gap-3 bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl md:rounded-2xl p-3 md:p-4 shadow-lg">
-                    <CheckCircle className="w-5 h-5 md:w-8 md:h-8 text-[#912082] mt-0.5 md:mt-1 flex-shrink-0" />
-                    <p className="text-gray-700 font-bold text-sm md:text-base"><span className="text-[#912082]">500+ Tours</span> successfully conducted</p>
-                  </div>
-                  <div className="flex items-start gap-2 md:gap-3 bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl md:rounded-2xl p-3 md:p-4 shadow-lg">
-                    <CheckCircle className="w-5 h-5 md:w-8 md:h-8 text-[#912082] mt-0.5 md:mt-1 flex-shrink-0" />
-                    <p className="text-gray-700 font-bold text-sm md:text-base"><span className="text-[#912082]">Custom Itineraries</span> tailored for you</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
