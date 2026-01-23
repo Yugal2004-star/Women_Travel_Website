@@ -5,7 +5,7 @@ const TourismWebsite = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
-  const [activeRegion, setActiveRegion] = useState('All');
+  const [activeRegion, setActiveRegion] = useState('chardham');
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const galleryImages = [
@@ -24,7 +24,7 @@ const TourismWebsite = () => {
     slidesData.push(galleryImages.slice(i, i + 6));
   }
 
-  const regions = ['All', 'Chardham', 'Gujarat', 'Himachal Pradesh', 'Kashmir & Ladakh', 'Madhya Pradesh', 'Maharashtra', 'Northeast', 'Odisha & Chhattisgarh', 'Rajasthan', 'South India', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal & Sikkim'];
+  const regions = [ 'Chardham', 'Gujarat', 'Himachal Pradesh', 'Kashmir & Ladakh', 'Madhya Pradesh', 'Maharashtra', 'Northeast', 'Odisha & Chhattisgarh', 'Rajasthan', 'South India', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal & Sikkim'];
 
   const content = {
     hero: { title: "Discover Incredible India", subtitle: "Your Gateway to Unforgettable Journeys" },
@@ -245,7 +245,7 @@ const TourismWebsite = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-white overflow-x-hidden">
       {/* Header */}
-<header className={`fixed w-full z-40 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg py-2 md:py-3' : 'bg-transparent py-4 md:py-6'}`}>        
+<header className={`fixed w-full z-40 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg ' : 'bg-transparent py-4 md:py-6'}`}>        
   <nav className="container mx-auto px-4 flex items-center justify-between">
           <div className="flex items-center space-x-2 md:space-x-3">
             <div className="p-1 md:p-2 rounded-xl bg-transparent ">
@@ -449,132 +449,58 @@ const TourismWebsite = () => {
               ))}
             </div>
           </div>
+           {/* Display Tours based on selected region */}
+                    <div>
+                      <h3 className="text-2xl md:text-4xl font-black mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent text-center">{activeRegion} Tours</h3>
+                      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+                        {content.tours[activeRegion]?.map((tour) => (
+                          <div key={tour.id} className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 group">
+                            <div className="relative h-48 md:h-56 overflow-hidden">
+                              <img src={tour.image} alt={tour.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                              <div className="absolute top-3 right-3 bg-gradient-to-r from-[#912082] to-pink-900 px-3 py-1.5 rounded-full text-white font-bold text-xs shadow-lg">
+                                {tour.duration}
+                              </div>
+                              <div className="absolute bottom-3 left-3 right-3">
+                                <h4 className="text-xl md:text-2xl font-black text-white drop-shadow-lg line-clamp-2 mb-1">{tour.name}</h4>
+                                <p className="text-white/90 text-xs font-semibold line-clamp-2">{tour.description}</p>
+                              </div>
+                            </div>
+                            <div className="p-4 space-y-3">
+                              <div className="flex items-start gap-2 text-[#912082]">
+                                <MapPinIcon className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                                <span className="text-sm font-bold line-clamp-2">{tour.destinations}</span>
+                              </div>
+                              
+                              <div className="space-y-2">
+                                <p className="text-xs font-bold text-gray-500 uppercase">Highlights:</p>
+                                <div className="flex flex-wrap gap-1.5">
+                                  {tour.highlights.slice(0, 3).map((highlight, i) => (
+                                    <span key={i} className="px-2 py-1 bg-gradient-to-r from-pink-50 to-rose-50 text-pink-900 rounded-lg text-xs font-semibold border border-pink-200">
+                                      {highlight}
+                                    </span>
+                                  ))}
+                                  {tour.highlights.length > 3 && (
+                                    <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-lg text-xs font-semibold">
+                                      +{tour.highlights.length - 3} more
+                                    </span>
+                                  )}
+                                </div>
+                              </div>
           
-          {/* Display Tours based on selected region */}
-          {activeRegion === 'All' ? (
-            <div className="space-y-12">
-              {Object.entries(content.tours).map(([region, tourList]) => (
-                <div key={region}>
-                  <h3 className="text-2xl md:text-4xl font-black mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent">{region}</h3>
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                    {tourList.slice(0, 3).map((tour) => (
-                      <div key={tour.id} className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 group">
-                        <div className="relative h-48 md:h-56 overflow-hidden">
-                          <img src={tour.image} alt={tour.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                          <div className="absolute top-3 right-3 bg-gradient-to-r from-[#912082] to-pink-900 px-3 py-1.5 rounded-full text-white font-bold text-xs shadow-lg">
-                            {tour.duration}
-                          </div>
-                          {/* <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-[#912082] font-black text-sm shadow-lg">
-                            {tour.price}
-                          </div> */}
-                          <div className="absolute bottom-3 left-3 right-3">
-                            <h4 className="text-xl md:text-2xl font-black text-white drop-shadow-lg line-clamp-2 mb-1">{tour.name}</h4>
-                            <p className="text-white/90 text-xs font-semibold line-clamp-2">{tour.description}</p>
-                          </div>
-                        </div>
-                        <div className="p-4 space-y-3">
-                          <div className="flex items-start gap-2 text-[#912082]">
-                            <MapPinIcon className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                            <span className="text-sm font-bold line-clamp-1">{tour.destinations}</span>
-                          </div>
-                          
-                          <div className="space-y-2">
-                            <p className="text-xs font-bold text-gray-500 uppercase">Highlights:</p>
-                            <div className="flex flex-wrap gap-1.5">
-                              {tour.highlights.slice(0, 3).map((highlight, i) => (
-                                <span key={i} className="px-2 py-1 bg-gradient-to-r from-pink-50 to-rose-50 text-pink-900 rounded-lg text-xs font-semibold border border-pink-200">
-                                  {highlight}
-                                </span>
-                              ))}
-                              {tour.highlights.length > 3 && (
-                                <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-lg text-xs font-semibold">
-                                  +{tour.highlights.length - 3} more
-                                </span>
-                              )}
+                              <div className="pt-2 border-t border-gray-100">
+                                <div className="flex items-center justify-between text-xs text-gray-600 mb-3">
+                                  <span className="font-semibold">Starting from: {tour.startFrom}</span>
+                                </div>
+                                <a href="/#contact-us" className="w-full py-3 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-xl font-bold hover:from-[#912082] hover:to-pink-900 hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 text-sm">
+                                  Enquire Now <ChevronRight className="w-4 h-4" />
+                                </a>
+                              </div>
                             </div>
                           </div>
-
-                          <div className="pt-2 border-t border-gray-100">
-                            <div className="flex items-center justify-between text-xs text-gray-600 mb-3">
-                              <span className="font-semibold">Starting from: {tour.startFrom}</span>
-                            </div>
-                            <button className="w-full py-3 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-xl font-bold hover:from-[#912082] hover:to-pink-900 transition-all duration-300 flex items-center justify-center gap-2 text-sm shadow-md hover:shadow-xl">
-                              View Details <ChevronRight className="w-4 h-4" />
-                            </button>
-                          </div>
-                        </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                  {tourList.length > 3 && (
-                    <button 
-                      onClick={() => setActiveRegion(region)}
-                      className="mt-4 px-6 py-2 bg-white border-2 border-[#912082] text-[#912082] rounded-full font-bold hover:bg-[#912082] hover:text-white transition"
-                    >
-                      View all {tourList.length} {region} tours →
-                    </button>
-                  )}
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div>
-              <h3 className="text-2xl md:text-4xl font-black mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent text-center">{activeRegion} Tours</h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                {content.tours[activeRegion]?.map((tour) => (
-                  <div key={tour.id} className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 group">
-                    <div className="relative h-48 md:h-56 overflow-hidden">
-                      <img src={tour.image} alt={tour.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                      <div className="absolute top-3 right-3 bg-gradient-to-r from-[#912082] to-pink-900 px-3 py-1.5 rounded-full text-white font-bold text-xs shadow-lg">
-                        {tour.duration}
-                      </div>
-                      {/* <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-[#912082] font-black text-sm shadow-lg">
-                        {tour.price}
-                      </div> */}
-                      <div className="absolute bottom-3 left-3 right-3">
-                        <h4 className="text-xl md:text-2xl font-black text-white drop-shadow-lg line-clamp-2 mb-1">{tour.name}</h4>
-                        <p className="text-white/90 text-xs font-semibold line-clamp-2">{tour.description}</p>
-                      </div>
-                    </div>
-                    <div className="p-4 space-y-3">
-                      <div className="flex items-start gap-2 text-[#912082]">
-                        <MapPinIcon className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm font-bold line-clamp-2">{tour.destinations}</span>
-                      </div>
-                      
-                      <div className="space-y-2">
-                        <p className="text-xs font-bold text-gray-500 uppercase">Highlights:</p>
-                        <div className="flex flex-wrap gap-1.5">
-                          {tour.highlights.slice(0, 3).map((highlight, i) => (
-                            <span key={i} className="px-2 py-1 bg-gradient-to-r from-pink-50 to-rose-50 text-pink-900 rounded-lg text-xs font-semibold border border-pink-200">
-                              {highlight}
-                            </span>
-                          ))}
-                          {tour.highlights.length > 3 && (
-                            <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-lg text-xs font-semibold">
-                              +{tour.highlights.length - 3} more
-                            </span>
-                          )}
-                        </div>
-                      </div>
-
-                      <div className="pt-2 border-t border-gray-100">
-                        <div className="flex items-center justify-between text-xs text-gray-600 mb-3">
-                          <span className="font-semibold">Starting from: {tour.startFrom}</span>
-                        </div>
-                        <a href="#contact-us" className="w-full py-3 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-xl font-bold hover:from-[#912082] hover:to-pink-900 hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 text-sm">
-                          Enquire Now <ChevronRight className="w-4 h-4" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
+                    </div>        </div>
       </section>
 
      

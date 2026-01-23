@@ -82,36 +82,36 @@ const About = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-white">
       {/* Header */}
-      <header className={`fixed w-full z-40 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg py-2 md:py-3' : 'bg-white/95 backdrop-blur-sm shadow-md py-4 md:py-6'}`}>
+      <header className={`fixed w-full z-40 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg ' : 'bg-transparent py-4 md:py-6'}`}>
         <nav className="container mx-auto px-4 flex items-center justify-between">
-          <div className="flex items-center space-x-2 md:space-x-3">
+          <Link to="/" className="flex items-center space-x-2 md:space-x-3">
             <div className="p-1 md:p-2 rounded-xl bg-transparent">
               <img src="/images/logo.png" alt="India Tour Company" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
             </div>
             <div>
-              <span className="text-lg md:text-2xl font-bold block bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent">India Tour Company</span>
-              <span className="text-xs font-semibold hidden md:block text-pink-900">NIDHI Certified</span>
+              <span className={`text-lg md:text-2xl font-bold block ${isScrolled ? 'bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent' : 'text-white drop-shadow-lg'}`}>India Tour Company</span>
+              <span className={`text-xs font-semibold hidden md:block ${isScrolled ? 'text-pink-900' : 'text-white/90'}`}>NIDHI Certified</span>
             </div>
-          </div>
+          </Link>
           
           <div className="hidden md:flex space-x-6 lg:space-x-8 items-center">
-            <Link to="/" className="font-semibold transition-all duration-300 relative group text-gray-700 hover:text-[#912082]">
+            <Link to="/" className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-[#912082]' : 'text-white hover:text-pink-200'}`}>
               Home
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
             </Link>
-            <a href="/#tours" className="font-semibold transition-all duration-300 relative group text-gray-700 hover:text-[#912082]">
+            <Link to="/tours" className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-[#912082]' : 'text-white hover:text-pink-200'}`}>
               Tours
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
-            </a>
-            <a href="/#gallery" className="font-semibold transition-all duration-300 relative group text-gray-700 hover:text-[#912082]">
+            </Link>
+            <a href="/#gallery" className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-[#912082]' : 'text-white hover:text-pink-200'}`}>
               Gallery
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
             </a>
-            <Link to="/about" className="font-semibold transition-all duration-300 relative group text-gray-700 hover:text-[#912082]">
+            <Link to="/about" className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-[#912082]' : 'text-white'}`}>
               About Us
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
+              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full"></span>
             </Link>
-            <a href="/#contact-us" className="font-semibold transition-all duration-300 relative group text-gray-700 hover:text-[#912082]">
+            <a href="/#contact-us" className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-[#912082]' : 'text-white hover:text-pink-200'}`}>
               Contact Us
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
             </a>
@@ -132,13 +132,13 @@ const About = () => {
             <Link to="/" className="block px-6 py-3 hover:bg-gradient-to-r hover:from-pink-50 hover:to-rose-50 transition font-semibold text-gray-700 hover:text-[#912082]" onClick={() => setIsMenuOpen(false)}>
               Home
             </Link>
-            <a href="/#tours" className="block px-6 py-3 hover:bg-gradient-to-r hover:from-pink-50 hover:to-rose-50 transition font-semibold text-gray-700 hover:text-[#912082]" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/tours" className="block px-6 py-3 hover:bg-gradient-to-r hover:from-pink-50 hover:to-rose-50 transition font-semibold text-gray-700 hover:text-[#912082]" onClick={() => setIsMenuOpen(false)}>
               Tours
-            </a>
+            </Link>
             <a href="/#gallery" className="block px-6 py-3 hover:bg-gradient-to-r hover:from-pink-50 hover:to-rose-50 transition font-semibold text-gray-700 hover:text-[#912082]" onClick={() => setIsMenuOpen(false)}>
               Gallery
             </a>
-            <Link to="/about" className="block px-6 py-3 hover:bg-gradient-to-r hover:from-pink-50 hover:to-rose-50 transition font-semibold text-gray-700 hover:text-[#912082]" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/about" className="block px-6 py-3 bg-gradient-to-r from-pink-50 to-rose-50 font-semibold text-[#912082]" onClick={() => setIsMenuOpen(false)}>
               About Us
             </Link>
             <a href="/#contact-us" className="block px-6 py-3 hover:bg-gradient-to-r hover:from-pink-50 hover:to-rose-50 transition font-semibold text-gray-700 hover:text-[#912082]" onClick={() => setIsMenuOpen(false)}>
@@ -156,13 +156,13 @@ const About = () => {
             alt="Travel"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#912082]/10 "></div>
+          <div className="absolute inset-0 bg-black/30"></div>
         </div>
         
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto pt-20 pb-10">
           <div className="inline-block mb-4 md:mb-6 animate-fadeInDown">
-            <div className="px-4 md:px-6 py-2 md:py-3 bg-white/95 shadow-lg rounded-full border-2 border-white">
-              <span className="bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent font-bold text-sm md:text-lg">
+            <div className="px-4 md:px-6 py-2 md:py-3 bg-white/20 backdrop-blur-sm shadow-lg rounded-full border-2 border-white/30">
+              <span className="text-white font-bold text-sm md:text-lg">
                 ✨ About Our Journey ✨
               </span>
             </div>

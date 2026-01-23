@@ -5,9 +5,9 @@ import { Menu, X, ChevronRight, MapPinIcon, Phone, Mail, Facebook, Instagram, Tw
 const Tours = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeRegion, setActiveRegion] = useState('All');
+  const [activeRegion, setActiveRegion] = useState('Chardham');
 
-  const regions = ['All', 'Chardham', 'Gujarat', 'Himachal Pradesh', 'Kashmir & Ladakh', 'Madhya Pradesh', 'Maharashtra', 'Northeast', 'Odisha & Chhattisgarh', 'Rajasthan', 'South India', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal & Sikkim'];
+  const regions = ['Chardham', 'Gujarat', 'Himachal Pradesh', 'Kashmir & Ladakh', 'Madhya Pradesh', 'Maharashtra', 'Northeast', 'Odisha & Chhattisgarh', 'Rajasthan', 'South India', 'Uttar Pradesh', 'Uttarakhand', 'West Bengal & Sikkim'];
 
   const content = {
     tours: {
@@ -191,36 +191,36 @@ const Tours = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-white overflow-x-hidden">
       {/* Header */}
-      <header className={`fixed w-full z-40 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg py-2 md:py-3' : 'bg-white shadow-md py-3 md:py-4'}`}>        
+      <header className={`fixed w-full z-40 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg ' : 'bg-transparent py-4 md:py-6'}`}>        
         <nav className="container mx-auto px-4 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2 md:space-x-3">
             <div className="p-1 md:p-2 rounded-xl bg-transparent">
               <img src="/images/logo.png" alt="India Tour Company" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
             </div>
             <div>
-              <span className="text-lg md:text-2xl font-bold block bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent">India Tour Company</span>
-              <span className="text-xs font-semibold hidden md:block text-pink-900">NIDHI Certified</span>
+              <span className={`text-lg md:text-2xl font-bold block ${isScrolled ? 'bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent' : 'text-white drop-shadow-lg'}`}>India Tour Company</span>
+              <span className={`text-xs font-semibold hidden md:block ${isScrolled ? 'text-pink-900' : 'text-white/90'}`}>NIDHI Certified</span>
             </div>
           </Link>
           
           <div className="hidden md:flex space-x-6 lg:space-x-8 items-center">
-            <Link to="/" className="font-semibold transition-all duration-300 relative group text-gray-700 hover:text-[#912082]">
+            <Link to="/" className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-[#912082]' : 'text-white hover:text-pink-200'}`}>
               Home
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
             </Link>
-            <Link to="/tours" className="font-semibold transition-all duration-300 relative group text-[#912082]">
+            <Link to="/tours" className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-[#912082]' : 'text-white'}`}>
               Tours
               <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full"></span>
             </Link>
-            <a href="/#gallery" className="font-semibold transition-all duration-300 relative group text-gray-700 hover:text-[#912082]">
+            <a href="/#gallery" className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-[#912082]' : 'text-white hover:text-pink-200'}`}>
               Gallery
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
             </a>
-            <Link to="/about" className="font-semibold transition-all duration-300 relative group text-gray-700 hover:text-[#912082]">
+            <Link to="/about" className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-[#912082]' : 'text-white hover:text-pink-200'}`}>
               About Us
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
             </Link>
-            <a href="/#contact-us" className="font-semibold transition-all duration-300 relative group text-gray-700 hover:text-[#912082]">
+            <a href="/#contact-us" className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-[#912082]' : 'text-white hover:text-pink-200'}`}>
               Contact Us
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
             </a>
@@ -258,30 +258,32 @@ const Tours = () => {
       </header>
 
       {/* Hero Banner */}
-      <section className="relative pt-24 md:pt-32 pb-12 md:pb-16 bg-gradient-to-br from-[#912082] to-pink-900 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <img 
-            src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1920&q=80"
-            alt="Tours Background"
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-block mb-4 md:mb-6">
-              <span className="px-4 md:px-6 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full font-bold text-sm md:text-lg shadow-xl border-2 border-white/30">
-                ✨ Explore Incredible India ✨
-              </span>
-            </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 md:mb-6 text-white drop-shadow-2xl">
-              Discover Our Tours
-            </h1>
-            <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-semibold drop-shadow-lg">
-              Choose from our extensive collection of curated tours across India
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Hero Banner */}
+<section className="relative min-h-[60vh] md:min-h-[80vh] flex items-center justify-center overflow-hidden">
+  <div className="absolute inset-0">
+    <img 
+      src="/images/tours/tour.jpg"
+      alt="Tours Background"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-black/30"></div>
+  </div>
+  <div className="container mx-auto px-4 relative z-10">
+    <div className="text-center max-w-4xl mx-auto">
+      <div className="inline-block mb-4 md:mb-6">
+        <span className="px-4 md:px-6 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full font-bold text-sm md:text-lg shadow-xl border-2 border-white/30">
+          ✨ Explore Incredible India ✨
+        </span>
+      </div>
+      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 md:mb-6 text-white drop-shadow-2xl">
+        Discover Our Tours
+      </h1>
+      <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-semibold drop-shadow-lg">
+        Choose from our extensive collection of curated tours across India
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* Tours Section */}
       <section className="py-12 md:py-24 bg-gradient-to-br from-pink-50 to-rose-50">
@@ -306,118 +308,59 @@ const Tours = () => {
           </div>
           
           {/* Display Tours based on selected region */}
-          {activeRegion === 'All' ? (
-            <div className="space-y-12">
-              {Object.entries(content.tours).map(([region, tourList]) => (
-                <div key={region}>
-                  <h3 className="text-2xl md:text-4xl font-black mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent">{region}</h3>
-                  <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                    {tourList.map((tour) => (
-                      <div key={tour.id} className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 group">
-                        <div className="relative h-48 md:h-56 overflow-hidden">
-                          <img src={tour.image} alt={tour.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                          <div className="absolute top-3 right-3 bg-gradient-to-r from-[#912082] to-pink-900 px-3 py-1.5 rounded-full text-white font-bold text-xs shadow-lg">
-                            {tour.duration}
-                          </div>
-                          <div className="absolute bottom-3 left-3 right-3">
-                            <h4 className="text-xl md:text-2xl font-black text-white drop-shadow-lg line-clamp-2 mb-1">{tour.name}</h4>
-                            <p className="text-white/90 text-xs font-semibold line-clamp-2">{tour.description}</p>
-                          </div>
-                        </div>
-                        <div className="p-4 space-y-3">
-                          <div className="flex items-start gap-2 text-[#912082]">
-                            <MapPinIcon className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                            <span className="text-sm font-bold line-clamp-2">{tour.destinations}</span>
-                          </div>
-                          
-                          <div className="space-y-2">
-                            <p className="text-xs font-bold text-gray-500 uppercase">Highlights:</p>
-                            <div className="flex flex-wrap gap-1.5">
-                              {tour.highlights.slice(0, 3).map((highlight, i) => (
-                                <span key={i} className="px-2 py-1 bg-gradient-to-r from-pink-50 to-rose-50 text-pink-900 rounded-lg text-xs font-semibold border border-pink-200">
-                                  {highlight}
-                                </span>
-                              ))}
-                              {tour.highlights.length > 3 && (
-                                <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-lg text-xs font-semibold">
-                                  +{tour.highlights.length - 3} more
-                                </span>
-                              )}
-                            </div>
-                          </div>
-
-                          <div className="pt-2 border-t border-gray-100">
-                            <div className="flex items-center justify-between text-xs text-gray-600 mb-3">
-                              <span className="font-semibold">Starting from: {tour.startFrom}</span>
-                            </div>
-                            <a href="/#contact-us" className="w-full py-3 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-xl font-bold hover:from-[#912082] hover:to-pink-900 hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 text-sm">
-                              Enquire Now <ChevronRight className="w-4 h-4" />
-                            </a>
-                          </div>
-                        </div>
+          <div>
+            <h3 className="text-2xl md:text-4xl font-black mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent text-center">{activeRegion} Tours</h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+              {content.tours[activeRegion]?.map((tour) => (
+                <div key={tour.id} className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 group">
+                  <div className="relative h-48 md:h-56 overflow-hidden">
+                    <img src={tour.image} alt={tour.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                    <div className="absolute top-3 right-3 bg-gradient-to-r from-[#912082] to-pink-900 px-3 py-1.5 rounded-full text-white font-bold text-xs shadow-lg">
+                      {tour.duration}
+                    </div>
+                    <div className="absolute bottom-3 left-3 right-3">
+                      <h4 className="text-xl md:text-2xl font-black text-white drop-shadow-lg line-clamp-2 mb-1">{tour.name}</h4>
+                      <p className="text-white/90 text-xs font-semibold line-clamp-2">{tour.description}</p>
+                    </div>
+                  </div>
+                  <div className="p-4 space-y-3">
+                    <div className="flex items-start gap-2 text-[#912082]">
+                      <MapPinIcon className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                      <span className="text-sm font-bold line-clamp-2">{tour.destinations}</span>
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <p className="text-xs font-bold text-gray-500 uppercase">Highlights:</p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {tour.highlights.slice(0, 3).map((highlight, i) => (
+                          <span key={i} className="px-2 py-1 bg-gradient-to-r from-pink-50 to-rose-50 text-pink-900 rounded-lg text-xs font-semibold border border-pink-200">
+                            {highlight}
+                          </span>
+                        ))}
+                        {tour.highlights.length > 3 && (
+                          <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-lg text-xs font-semibold">
+                            +{tour.highlights.length - 3} more
+                          </span>
+                        )}
                       </div>
-                    ))}
+                    </div>
+
+                    <div className="pt-2 border-t border-gray-100">
+                      <div className="flex items-center justify-between text-xs text-gray-600 mb-3">
+                        <span className="font-semibold">Starting from: {tour.startFrom}</span>
+                      </div>
+                      <a href="/#contact-us" className="w-full py-3 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-xl font-bold hover:from-[#912082] hover:to-pink-900 hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 text-sm">
+                        Enquire Now <ChevronRight className="w-4 h-4" />
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
-          ) : (
-            <div>
-              <h3 className="text-2xl md:text-4xl font-black mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent text-center">{activeRegion} Tours</h3>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-                {content.tours[activeRegion]?.map((tour) => (
-                  <div key={tour.id} className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden transform hover:-translate-y-2 group">
-                    <div className="relative h-48 md:h-56 overflow-hidden">
-                      <img src={tour.image} alt={tour.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                      <div className="absolute top-3 right-3 bg-gradient-to-r from-[#912082] to-pink-900 px-3 py-1.5 rounded-full text-white font-bold text-xs shadow-lg">
-                        {tour.duration}
-                      </div>
-                      <div className="absolute bottom-3 left-3 right-3">
-                        <h4 className="text-xl md:text-2xl font-black text-white drop-shadow-lg line-clamp-2 mb-1">{tour.name}</h4>
-                        <p className="text-white/90 text-xs font-semibold line-clamp-2">{tour.description}</p>
-                      </div>
-                    </div>
-                    <div className="p-4 space-y-3">
-                      <div className="flex items-start gap-2 text-[#912082]">
-                        <MapPinIcon className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm font-bold line-clamp-2">{tour.destinations}</span>
-                      </div>
-                      
-                      <div className="space-y-2">
-                        <p className="text-xs font-bold text-gray-500 uppercase">Highlights:</p>
-                        <div className="flex flex-wrap gap-1.5">
-                          {tour.highlights.slice(0, 3).map((highlight, i) => (
-                            <span key={i} className="px-2 py-1 bg-gradient-to-r from-pink-50 to-rose-50 text-pink-900 rounded-lg text-xs font-semibold border border-pink-200">
-                              {highlight}
-                            </span>
-                          ))}
-                          {tour.highlights.length > 3 && (
-                            <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-lg text-xs font-semibold">
-                              +{tour.highlights.length - 3} more
-                            </span>
-                          )}
-                        </div>
-                      </div>
-
-                      <div className="pt-2 border-t border-gray-100">
-                        <div className="flex items-center justify-between text-xs text-gray-600 mb-3">
-                          <span className="font-semibold">Starting from: {tour.startFrom}</span>
-                        </div>
-                        <a href="/#contact-us" className="w-full py-3 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-xl font-bold hover:from-[#912082] hover:to-pink-900 hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 text-sm">
-                          Enquire Now <ChevronRight className="w-4 h-4" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+          </div>
         </div>
       </section>
-
       {/* Footer */}
       <footer className="bg-[#912082] text-white py-8 md:py-12">
         <div className="container mx-auto px-4">
