@@ -86,7 +86,7 @@ const About = () => {
         <nav className="container mx-auto px-4 flex items-center justify-between">
           <div className="flex items-center space-x-2 md:space-x-3">
             <div className="p-1 md:p-2 rounded-xl bg-transparent">
-              <img src="/images/logo.jpeg" alt="India Tour Company" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
+              <img src="/images/logo.png" alt="India Tour Company" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
             </div>
             <div>
               <span className="text-lg md:text-2xl font-bold block bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent">India Tour Company</span>
@@ -437,7 +437,7 @@ const About = () => {
             
             <div className="flex justify-center mb-4 md:mb-6">
               <div className="p-2 md:p-3 bg-transparent rounded-xl md:rounded-2xl">
-                <img src="/images/logo.jpeg" alt="India Tour Company" className="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 object-contain shadow-lg" />
+                <img src="/images/logo1.jpeg" alt="India Tour Company" className="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 object-contain shadow-lg" />
               </div>
             </div>
           </div>
