@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronRight, Users, Award, Globe, Heart, Shield, Compass, Mountain, Camera, MapPin, Phone, Mail, Facebook, Instagram, Twitter, Star, Plane, Ship, Clock, CheckCircle, Calendar, MapPinIcon } from 'lucide-react';
-
+import { Link } from 'react-router-dom';
 const TourismWebsite = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -257,14 +257,36 @@ const TourismWebsite = () => {
             </div>
           </div>
           
-          <div className="hidden md:flex space-x-6 lg:space-x-8 items-center">
+          {/* <div className="hidden md:flex space-x-6 lg:space-x-8 items-center">
             {['Home',  'Tours', 'Gallery','About Us', 'Contact Us'].map((item) => (
               <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-[#912082]' : 'text-white hover:text-[#912082]'}`}>
                 {item}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
               </a>
             ))}
-          </div>
+          </div> */}
+          <div className="hidden md:flex space-x-6 lg:space-x-8 items-center">
+  <a href="#home" className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-[#912082]' : 'text-white hover:text-[#912082]'}`}>
+    Home
+    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
+  </a>
+  <a href="#tours" className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-[#912082]' : 'text-white hover:text-[#912082]'}`}>
+    Tours
+    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
+  </a>
+  <a href="#gallery" className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-[#912082]' : 'text-white hover:text-[#912082]'}`}>
+    Gallery
+    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
+  </a>
+  <Link to="/about" className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-[#912082]' : 'text-white hover:text-[#912082]'}`}>
+    About Us
+    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
+  </Link>
+  <a href="#contact-us" className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-[#912082]' : 'text-white hover:text-[#912082]'}`}>
+    Contact Us
+    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
+  </a>
+</div>
 
           <div className="flex items-center gap-2 md:gap-3">
             <a href="#contact-us" className="hidden md:block px-4 lg:px-6 py-2 lg:py-3 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-full hover:shadow-xl hover:from-[#912082] hover:to-pink-900 transition text-sm lg:text-base font-semibold">
@@ -275,7 +297,7 @@ const TourismWebsite = () => {
             </button>
           </div>
         </nav>
-
+{/* 
         {isMenuOpen && (
           <div className="md:hidden bg-white shadow-xl absolute w-full mt-3 py-4 rounded-b-2xl border-t-4 border-[#912082]">
             {['Home', 'About Us', 'Tours', 'Destination', 'Contact Us'].map(item => (
@@ -284,7 +306,26 @@ const TourismWebsite = () => {
               </a>
             ))}
           </div>
-        )}
+        )} */}
+        {isMenuOpen && (
+  <div className="md:hidden bg-white shadow-xl absolute w-full mt-3 py-4 rounded-b-2xl border-t-4 border-[#912082]">
+    <a href="#home" className="block px-6 py-3 hover:bg-gradient-to-r hover:from-pink-50 hover:to-rose-50 transition font-semibold text-gray-700 hover:text-[#912082]" onClick={() => setIsMenuOpen(false)}>
+      Home
+    </a>
+    <a href="#tours" className="block px-6 py-3 hover:bg-gradient-to-r hover:from-pink-50 hover:to-rose-50 transition font-semibold text-gray-700 hover:text-[#912082]" onClick={() => setIsMenuOpen(false)}>
+      Tours
+    </a>
+    <a href="#gallery" className="block px-6 py-3 hover:bg-gradient-to-r hover:from-pink-50 hover:to-rose-50 transition font-semibold text-gray-700 hover:text-[#912082]" onClick={() => setIsMenuOpen(false)}>
+      Gallery
+    </a>
+    <Link to="/about" className="block px-6 py-3 hover:bg-gradient-to-r hover:from-pink-50 hover:to-rose-50 transition font-semibold text-gray-700 hover:text-[#912082]" onClick={() => setIsMenuOpen(false)}>
+      About Us
+    </Link>
+    <a href="#contact-us" className="block px-6 py-3 hover:bg-gradient-to-r hover:from-pink-50 hover:to-rose-50 transition font-semibold text-gray-700 hover:text-[#912082]" onClick={() => setIsMenuOpen(false)}>
+      Contact Us
+    </a>
+  </div>
+)}
       </header>
 
       {/* Hero Section */}
@@ -707,7 +748,7 @@ const TourismWebsite = () => {
   <div className="container mx-auto px-4">
     
     <div className="grid grid-cols-3 md:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
-      <div>
+      {/* <div>
         <h5 className="font-black text-base md:text-xl mb-3 md:mb-4">Quick Links</h5>
         <ul className="space-y-1 md:space-y-2 text-white/80 font-semibold text-xs md:text-sm">
           <li><a href="#home" className="hover:text-white transition">Home</a></li>
@@ -715,7 +756,16 @@ const TourismWebsite = () => {
           <li><a href="#about-us" className="hover:text-white transition">About Us</a></li>
           <li><a href="#contact-us" className="hover:text-white transition">Contact Us</a></li>
         </ul>
-      </div>
+      </div> */}
+      <div>
+  <h5 className="font-black text-base md:text-xl mb-3 md:mb-4">Quick Links</h5>
+  <ul className="space-y-1 md:space-y-2 text-white/80 font-semibold text-xs md:text-sm">
+    <li><a href="#home" className="hover:text-white transition">Home</a></li>
+    <li><a href="#tours" className="hover:text-white transition">Tours</a></li>
+    <li><Link to="/about" className="hover:text-white transition">About Us</Link></li>
+    <li><a href="#contact-us" className="hover:text-white transition">Contact Us</a></li>
+  </ul>
+</div>
       
       <div>
         <h5 className="font-black text-base md:text-xl mb-3 md:mb-4">Popular Tours</h5>
