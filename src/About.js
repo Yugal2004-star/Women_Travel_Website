@@ -441,6 +441,19 @@ const About = () => {
               </div>
             </div>
           </div>
+
+           <div className="flex justify-center gap-3 md:gap-6 mt-8 md:mt-12">
+                        <a href="https://facebook.com" className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-[#912082] to-pink-900 rounded-xl md:rounded-2xl flex items-center justify-center hover:from-[#912082] hover:to-pink-900 hover:scale-110 transition-all duration-300 shadow-lg">
+                          <Facebook className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                        </a>
+                        <a href="https://instagram.com" className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-[#912082] to-pink-900 rounded-xl md:rounded-2xl flex items-center justify-center hover:from-[#912082] hover:to-pink-900 hover:scale-110 transition-all duration-300 shadow-lg">
+                          <Instagram className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                        </a>
+                        <a href="https://twitter.com" className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-[#912082] to-pink-900 rounded-xl md:rounded-2xl flex items-center justify-center hover:from-[#912082] hover:to-pink-900 hover:scale-110 transition-all duration-300 shadow-lg">
+                          <Twitter className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                        </a>
+                      </div>
+          
           
           <div className="border-t border-white/20 pt-6 md:pt-8">
             <div className="text-center">
