@@ -5,7 +5,9 @@ import './index.css';
 import App from './App';
 import About from './About';
 import Tours from './Tours';
+import Contact from './Contact'; 
 import reportWebVitals from './reportWebVitals';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,6 +17,7 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="/about" element={<About />} />
         <Route path="/tours" element={<Tours />} />
+        <Route path="/contact" element={<Contact />} /> 
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

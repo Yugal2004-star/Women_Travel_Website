@@ -88,39 +88,67 @@ const About = () => {
             <div className="p-1 md:p-2 rounded-xl bg-transparent">
               <img src="/images/logo.png" alt="India Tour Company" className="w-12 h-12 md:w-16 md:h-16 object-contain" />
             </div>
-            <div>
+            {/* <div>
               <span className={`text-lg md:text-2xl font-bold block ${isScrolled ? 'bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent' : 'text-white drop-shadow-lg'}`}>India Tour Company</span>
               <span className={`text-xs font-semibold hidden md:block ${isScrolled ? 'text-pink-900' : 'text-white/90'}`}>NIDHI Certified</span>
-            </div>
+            </div> */}
           </Link>
           
           <div className="hidden md:flex space-x-6 lg:space-x-8 items-center">
-            <Link to="/" className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-[#912082]' : 'text-white hover:text-pink-200'}`}>
-              Home
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
-            </Link>
-            <Link to="/tours" className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-[#912082]' : 'text-white hover:text-pink-200'}`}>
-              Tours
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
-            </Link>
-            <a href="/#gallery" className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-[#912082]' : 'text-white hover:text-pink-200'}`}>
-              Gallery
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
-            </a>
-            <Link to="/about" className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-[#912082]' : 'text-white'}`}>
-              About Us
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full"></span>
-            </Link>
-            <a href="/#contact-us" className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-[#912082]' : 'text-white hover:text-pink-200'}`}>
-              Contact Us
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
-            </a>
+           <Link 
+             to="/" 
+             className={`font-semibold transition-all duration-300 relative group ${
+               isScrolled 
+                 ? 'text-gray-700 hover:text-[#912082]' 
+                 : 'text-white hover:text-[#912082] px-3 py-1.5 rounded-lg bg-black/20 backdrop-blur-sm'
+             }`}
+           >
+             Home
+             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
+           </Link>
+           <Link 
+             to="/tours" 
+             className={`font-semibold transition-all duration-300 relative group ${
+               isScrolled 
+                 ? 'text-gray-700 hover:text-[#912082]' 
+                 : 'text-white hover:text-[#912082] px-3 py-1.5 rounded-lg bg-black/20 backdrop-blur-sm'
+             }`}
+           >
+             Tours
+             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
+           </Link>
+             {/* <a href="#gallery" className={`font-semibold transition-all duration-300 relative group ${isScrolled ? 'text-gray-700 hover:text-[#912082]' : 'text-white hover:text-[#912082]'}`}>
+               Gallery
+               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
+             </a> */}
+           <Link 
+             to="/about" 
+             className={`font-semibold transition-all duration-300 relative group ${
+               isScrolled 
+                 ? 'text-gray-700 hover:text-[#912082]' 
+                 : 'text-white hover:text-[#912082] px-3 py-1.5 rounded-lg bg-black/20 backdrop-blur-sm'
+             }`}
+           >
+             About Us
+             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
+           </Link>
+           <Link 
+             to="/contact" 
+             className={`font-semibold transition-all duration-300 relative group ${
+               isScrolled 
+                 ? 'text-gray-700 hover:text-[#912082]' 
+                 : 'text-white hover:text-[#912082] px-3 py-1.5 rounded-lg bg-black/20 backdrop-blur-sm'
+             }`}
+           >
+             Contact
+             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#912082] to-pink-900 rounded-full group-hover:w-full transition-all duration-300"></span>
+           </Link>
           </div>
 
           <div className="flex items-center gap-2 md:gap-3">
-            <a href="/#contact-us" className="hidden md:block px-4 lg:px-6 py-2 lg:py-3 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-full hover:shadow-xl transition text-sm lg:text-base font-semibold">
+            <Link to="/contact" className="hidden md:block px-4 lg:px-6 py-2 lg:py-3 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-full hover:shadow-xl transition text-sm lg:text-base font-semibold">
               Enquire Now
-            </a>
+            </Link>
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden p-2 rounded-xl bg-gradient-to-br from-[#912082] to-pink-900">
               {isMenuOpen ? <X className="text-white" size={24} /> : <Menu className="text-white" size={24} />}
             </button>
@@ -135,24 +163,24 @@ const About = () => {
             <Link to="/tours" className="block px-6 py-3 hover:bg-gradient-to-r hover:from-pink-50 hover:to-rose-50 transition font-semibold text-gray-700 hover:text-[#912082]" onClick={() => setIsMenuOpen(false)}>
               Tours
             </Link>
-            <a href="/#gallery" className="block px-6 py-3 hover:bg-gradient-to-r hover:from-pink-50 hover:to-rose-50 transition font-semibold text-gray-700 hover:text-[#912082]" onClick={() => setIsMenuOpen(false)}>
+            {/* <a href="/#gallery" className="block px-6 py-3 hover:bg-gradient-to-r hover:from-pink-50 hover:to-rose-50 transition font-semibold text-gray-700 hover:text-[#912082]" onClick={() => setIsMenuOpen(false)}>
               Gallery
-            </a>
+            </a> */}
             <Link to="/about" className="block px-6 py-3 bg-gradient-to-r from-pink-50 to-rose-50 font-semibold text-[#912082]" onClick={() => setIsMenuOpen(false)}>
               About Us
             </Link>
-            <a href="/#contact-us" className="block px-6 py-3 hover:bg-gradient-to-r hover:from-pink-50 hover:to-rose-50 transition font-semibold text-gray-700 hover:text-[#912082]" onClick={() => setIsMenuOpen(false)}>
+            <Link to="/contact" className="block px-6 py-3 hover:bg-gradient-to-r hover:from-pink-50 hover:to-rose-50 transition font-semibold text-gray-700 hover:text-[#912082]" onClick={() => setIsMenuOpen(false)}>
               Contact Us
-            </a>
+            </Link>
           </div>
         )}
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[80vh] md:min-h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
-            src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1920&q=80"
+            src="/images/hero/3.jpeg"
             alt="Travel"
             className="w-full h-full object-cover"
           />
@@ -207,7 +235,7 @@ const About = () => {
                   📖 Our Story 📖
                 </span>
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent pb-1 overflow-visible" style={{lineHeight: '1.35'}}>
                 Journey of Excellence
               </h2>
             </div>
@@ -257,7 +285,7 @@ const About = () => {
                 🎯 Our Expertise 🎯
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent pb-1 overflow-visible" style={{lineHeight: '1.35'}}>
               Specialized Tours We Conduct
             </h2>
           </div>
@@ -301,7 +329,7 @@ const About = () => {
                 ⭐ Our Values ⭐
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent pb-1 overflow-visible" style={{lineHeight: '1.35'}}>
               What We Stand For
             </h2>
           </div>
@@ -333,7 +361,7 @@ const About = () => {
                 🏆 Certifications 🏆
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent pb-1 overflow-visible" style={{lineHeight: '1.35'}}>
               Trusted & Certified
             </h2>
           </div>
@@ -365,7 +393,7 @@ const About = () => {
                 👥 Our Team 👥
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent pb-1 overflow-visible" style={{lineHeight: '1.35'}}>
               Meet Our Leaders
             </h2>
           </div>
@@ -394,75 +422,90 @@ const About = () => {
       <section className="py-12 md:py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center bg-gradient-to-br from-pink-50 to-rose-50 rounded-3xl shadow-2xl p-8 md:p-12 border-4 border-[#912082]">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4 md:mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4 md:mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent pb-1 overflow-visible" style={{lineHeight: '1.35'}}>
               Ready to Start Your Journey?
             </h2>
             <p className="text-lg md:text-xl text-gray-700 mb-6 md:mb-8 font-semibold">
               Let us create unforgettable memories for you
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/#tours" className="px-8 md:px-12 py-3 md:py-4 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-full font-bold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-sm md:text-lg">
+              <Link to="/tours" className="px-8 md:px-12 py-3 md:py-4 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-full font-bold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-sm md:text-lg">
                 Explore Tours
-              </a>
-              <a href="/#contact-us" className="px-8 md:px-12 py-3 md:py-4 bg-white border-2 border-[#912082] text-[#912082] rounded-full font-bold hover:bg-[#912082] hover:text-white transition-all duration-300 transform hover:scale-105 text-sm md:text-lg">
+              </Link>
+              <Link to="/contact" className="px-8 md:px-12 py-3 md:py-4 bg-white border-2 border-[#912082] text-[#912082] rounded-full font-bold hover:bg-[#912082] hover:text-white transition-all duration-300 transform hover:scale-105 text-sm md:text-lg">
                 Contact Us
-              </a>
+              </Link>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-[#912082] text-white py-8 md:py-12">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-3 md:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
-            <div>
-              <h5 className="font-black text-base md:text-xl mb-3 md:mb-4">Quick Links</h5>
-              <ul className="space-y-1 md:space-y-2 text-white/80 font-semibold text-xs md:text-sm">
-                <li><Link to="/" className="hover:text-white transition">Home</Link></li>
-                <li><a href="/#tours" className="hover:text-white transition">Tours</a></li>
-                <li><Link to="/about" className="hover:text-white transition">About Us</Link></li>
-                <li><a href="/#contact-us" className="hover:text-white transition">Contact Us</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h5 className="font-black text-base md:text-xl mb-3 md:mb-4">Contact Info</h5>
-              <ul className="space-y-1 md:space-y-2 text-white/80 font-semibold text-xs md:text-sm">
-                <li><a href="tel:+918767764784" className="hover:text-white transition">+91 87677 64784</a></li>
-                <li><a href="tel:+919373757002" className="hover:text-white transition">+91 93737 57002</a></li>
-                <li><a href="mailto:itcindia05@gmail.com" className="hover:text-white transition">itcindia05@gmail.com</a></li>
-              </ul>
-            </div>
-            
-            <div className="flex justify-center mb-4 md:mb-6">
-              <div className="p-2 md:p-3 bg-transparent rounded-xl md:rounded-2xl">
-                <img src="/images/logo1.jpeg" alt="India Tour Company" className="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 object-contain shadow-lg" />
+            <div className="text-center">
+              <h3 className="text-2xl md:text-3xl font-black mb-4 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent pb-2">
+                Follow Us
+              </h3>
+              <p className="text-gray-600 font-semibold mb-6">Stay connected on social media</p>
+              <div className="flex justify-center gap-4 md:gap-6">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#912082] to-pink-900 hover:from-pink-900 hover:to-[#912082] rounded-2xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-lg">
+                  <Facebook className="w-7 h-7 md:w-8 md:h-8 text-white" />
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#912082] to-pink-900 hover:from-pink-900 hover:to-[#912082] rounded-2xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-lg">
+                  <Instagram className="w-7 h-7 md:w-8 md:h-8 text-white" />
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#912082] to-pink-900 hover:from-pink-900 hover:to-[#912082] rounded-2xl flex items-center justify-center transition-all duration-300 transform hover:scale-110 shadow-lg">
+                  <Twitter className="w-7 h-7 md:w-8 md:h-8 text-white" />
+                </a>
               </div>
             </div>
           </div>
+      </section>
 
-           <div className="flex justify-center gap-3 md:gap-6 mt-8 md:mt-12">
-                        <a href="https://facebook.com" className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-[#912082] to-pink-900 rounded-xl md:rounded-2xl flex items-center justify-center hover:from-[#912082] hover:to-pink-900 hover:scale-110 transition-all duration-300 shadow-lg">
-                          <Facebook className="w-6 h-6 md:w-8 md:h-8 text-white" />
-                        </a>
-                        <a href="https://instagram.com" className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-[#912082] to-pink-900 rounded-xl md:rounded-2xl flex items-center justify-center hover:from-[#912082] hover:to-pink-900 hover:scale-110 transition-all duration-300 shadow-lg">
-                          <Instagram className="w-6 h-6 md:w-8 md:h-8 text-white" />
-                        </a>
-                        <a href="https://twitter.com" className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-[#912082] to-pink-900 rounded-xl md:rounded-2xl flex items-center justify-center hover:from-[#912082] hover:to-pink-900 hover:scale-110 transition-all duration-300 shadow-lg">
-                          <Twitter className="w-6 h-6 md:w-8 md:h-8 text-white" />
-                        </a>
-                      </div>
-          
-          
-          <div className="border-t border-white/20 pt-6 md:pt-8">
-            <div className="text-center">
-              <p className="text-white/90 font-semibold text-xs md:text-sm">&copy; 2026 India Tour Company. All rights reserved.</p>
-              <p className="text-white/80 mt-1 md:mt-2 font-semibold text-xs md:text-sm">✨ NIDHI Registered | IATA Certified | Ministry of Tourism ✨</p>
-            </div>
-          </div>
+      {/* Footer */}
+     {/* Footer */}
+<footer className="bg-[#912082] text-white py-8 md:py-12">
+  <div className="container mx-auto px-4">
+    <div className="grid grid-cols-3 md:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
+      {/* Quick Links */}
+      <div>
+        <h5 className="font-black text-base md:text-xl mb-3 md:mb-4">Quick Links</h5>
+        <ul className="space-y-1 md:space-y-2 text-white/80 font-semibold text-xs md:text-sm">
+          <li><Link to="/" className="hover:text-white transition">Home</Link></li>
+          <li><Link to="/tours" className="hover:text-white transition">Tours</Link></li>
+          <li><Link to="/about" className="hover:text-white transition">About Us</Link></li>
+          <li><Link to="/contact" className="hover:text-white transition">Contact Us</Link></li>
+        </ul>
+      </div>
+      
+      {/* Popular Tours */}
+      <div>
+        <h5 className="font-black text-base md:text-xl mb-3 md:mb-4">Popular Tours</h5>
+        <ul className="space-y-1 md:space-y-2 text-white/80 font-semibold text-xs md:text-sm">
+          <li><Link to="/tours" className="hover:text-white transition">Chardham</Link></li>
+          <li><Link to="/tours" className="hover:text-white transition">Kerala</Link></li>
+          <li><Link to="/tours" className="hover:text-white transition">Rajasthan</Link></li>
+          <li><Link to="/tours" className="hover:text-white transition">Ladakh</Link></li>
+        </ul>
+      </div>
+
+      {/* Logo */}
+      <div className="flex justify-center mb-4 md:mb-6">
+        <div className="p-2 md:p-3 bg-transparent rounded-xl md:rounded-2xl">
+          <img src="/images/logo1.jpeg" alt="India Tour Company" className="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 object-contain shadow-lg" />
         </div>
-      </footer>
+      </div>
+    </div>
+    
+    {/* Copyright Section */}
+    <div className="border-t border-white/20 pt-6 md:pt-8">
+      <div className="text-center">
+        <p className="text-white/90 font-semibold text-xs md:text-sm">&copy; 2026 India Tour Company. All rights reserved.</p>
+        <p className="text-white/80 mt-1 md:mt-2 font-semibold text-xs md:text-sm">✨ NIDHI Registered | IATA Certified | Ministry of Tourism ✨</p>
+        <p className="text-white/70 mt-2 md:mt-3 font-medium text-xs md:text-sm">
+          <a href="https://www.royalswebtechpvtltd.com/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-pink-300 transition-colors duration-300 underline">Designed and Developed by Chetan's Royals Webtech Pvt. Ltd.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
 
       <style>{`
         html {
