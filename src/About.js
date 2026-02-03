@@ -384,40 +384,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-12 md:py-24 bg-gradient-to-br from-pink-50 to-rose-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8 md:mb-12">
-            <div className="inline-block mb-3 md:mb-4">
-              <span className="px-4 md:px-6 py-2 bg-gradient-to-r from-[#912082] to-pink-900 text-white rounded-full font-bold text-sm md:text-lg shadow-xl">
-                👥 Our Team 👥
-              </span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent pb-1 overflow-visible" style={{lineHeight: '1.35'}}>
-              Meet Our Leaders
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
-            {team.map((member, idx) => (
-              <div key={idx} className="text-center group">
-                <div className="relative mb-4 md:mb-6 inline-block">
-                  <img src={member.image} alt={member.name} className="w-40 h-40 md:w-56 md:h-56 rounded-full object-cover border-4 md:border-8 border-[#912082] shadow-2xl group-hover:scale-105 transition-transform duration-300" />
-                  <div className="absolute bottom-2 right-2 w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-[#912082] to-pink-900 rounded-full flex items-center justify-center shadow-lg">
-                    <Star className="w-5 h-5 md:w-6 md:h-6 text-white fill-white" />
-                  </div>
-                </div>
-                <h3 className="text-xl md:text-2xl font-black mb-2 bg-gradient-to-r from-[#912082] to-pink-900 bg-clip-text text-transparent">
-                  {member.name}
-                </h3>
-                <p className="text-[#912082] font-bold text-sm md:text-base mb-2">{member.role}</p>
-                <p className="text-gray-600 font-semibold text-xs md:text-sm">{member.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-12 md:py-24 bg-white">
         <div className="container mx-auto px-4">
