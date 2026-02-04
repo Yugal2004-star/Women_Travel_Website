@@ -1,13 +1,86 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, Phone, Mail, MapPin, Facebook, Instagram, Twitter, ChevronRight, Clock } from 'lucide-react';
 import EnquiryModal from './EnquiryModal';
 const Contact = () => {
+ const [formData, setFormData] = useState({
+  name: "",
+  phone: "",
+  email: "",
+  startDate: "",
+  days: "",
+  adults: "",
+  children: "",
+  category: "",
+  tourName: "",
+  message: "",
+});
+
+
+const handleChange = (e) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value,
+  });
+};
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch("http://localhost:5000/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      alert("Message sent successfully!");
+      setFormData({
+        name: "",
+  phone: "",
+  email: "",
+  startDate: "",
+  days: "",
+  adults: "",
+  children: "",
+  category: "",
+  tourName: "",
+  message: "",
+      });
+      
+    } else {
+      alert("Failed to send message");
+    }
+  } catch (error) {
+    alert("Server error. Try again later.");
+  }
+
+  
+};
+
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isEnquiryModalOpen, setIsEnquiryModalOpen] = useState(false);
-const [selectedCategory, setSelectedCategory] = useState('');
-const [selectedTour, setSelectedTour] = useState('');  
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedTour, setSelectedTour] = useState('');  
+  // 👉 ADD THIS RIGHT HERE (after states)
+  React.useEffect(() => {
+    setFormData((prev) => ({
+      ...prev,
+      category: selectedCategory,
+      tourName: selectedTour
+        ? toursByCategory[selectedCategory]?.find(
+            (t) => t.id === parseInt(selectedTour)
+          )?.name
+        : "",
+    }));
+  }, [selectedCategory, selectedTour]);
+
 
  const toursByCategory = {
   'Chardham': [
@@ -255,7 +328,8 @@ const categories = Object.keys(toursByCategory);
             </div>
 
             <div className="bg-white rounded-3xl shadow-2xl p-6 md:p-10 lg:p-12 border-4 border-pink-200">
-              <form className="space-y-6" onSubmit={(e) => { e.preventDefault();  }}>
+             <form className="space-y-6" onSubmit={handleSubmit}>
+
 
 {/* Tour Selection - Two Step */}
 <div className="mb-6 space-y-4">
@@ -316,20 +390,27 @@ const categories = Object.keys(toursByCategory);
                   <div>
                     <label className="block text-sm font-bold text-gray-700 mb-2">Your Name *</label>
                     <input
-                      type="text"
-                      required
-                      className="w-full px-4 md:px-6 py-3 md:py-4 rounded-xl border-2 border-pink-300 focus:border-[#912082] focus:outline-none transition bg-white font-semibold text-sm md:text-base"
-                      placeholder="Enter your name"
-                    />
+  type="text"
+  name="name"
+  value={formData.name}
+  onChange={handleChange}
+  required
+  className="w-full px-4 md:px-6 py-3 md:py-4 rounded-xl border-2 border-pink-300 focus:border-[#912082] focus:outline-none transition bg-white font-semibold text-sm md:text-base" 
+  placeholder="Enter your name"
+/>
+
                   </div>
                   <div>
       <label className="block text-sm font-bold text-gray-700 mb-2">Phone Number *</label>
-      <input 
-        type="tel" 
-        required
-        className="w-full px-4 md:px-6 py-3 md:py-4 rounded-xl border-2 border-pink-300 focus:border-[#912082] focus:outline-none transition bg-white font-semibold text-sm md:text-base" 
-        placeholder="+91 98765 43210"
-      />
+     <input
+  type="tel"
+  name="phone"
+  value={formData.phone}
+  onChange={handleChange}
+   className="w-full px-4 md:px-6 py-3 md:py-4 rounded-xl border-2 border-pink-300 focus:border-[#912082] focus:outline-none transition bg-white font-semibold text-sm md:text-base" 
+  required
+/>
+
     </div>
   </div>
 
@@ -338,6 +419,9 @@ const categories = Object.keys(toursByCategory);
     <input 
       type="email" 
       required
+       name="email"
+  value={formData.email}
+  onChange={handleChange}
       className="w-full px-4 md:px-6 py-3 md:py-4 rounded-xl border-2 border-pink-300 focus:border-[#912082] focus:outline-none transition bg-white font-semibold text-sm md:text-base" 
       placeholder="your@email.com"
     />
@@ -348,6 +432,9 @@ const categories = Object.keys(toursByCategory);
       <label className="block text-sm font-bold text-gray-700 mb-2">Start Date</label>
       <input 
         type="date" 
+         name="startDate"
+  value={formData.startDate}
+  onChange={handleChange}
         className="w-full px-4 md:px-6 py-3 md:py-4 rounded-xl border-2 border-pink-300 focus:border-[#912082] focus:outline-none transition bg-white font-semibold text-sm md:text-base" 
       />
     </div>
@@ -356,6 +443,9 @@ const categories = Object.keys(toursByCategory);
       <input 
         type="number" 
         min="1"
+          name="days"
+  value={formData.days}
+  onChange={handleChange}
         className="w-full px-4 md:px-6 py-3 md:py-4 rounded-xl border-2 border-pink-300 focus:border-[#912082] focus:outline-none transition bg-white font-semibold text-sm md:text-base" 
         placeholder="e.g., 7"
       />
@@ -368,6 +458,9 @@ const categories = Object.keys(toursByCategory);
       <input 
         type="number" 
         min="1"
+          name="adults"
+  value={formData.adults}
+  onChange={handleChange}
         className="w-full px-4 md:px-6 py-3 md:py-4 rounded-xl border-2 border-pink-300 focus:border-[#912082] focus:outline-none transition bg-white font-semibold text-sm md:text-base" 
         placeholder="e.g., 2"
       />
@@ -377,6 +470,9 @@ const categories = Object.keys(toursByCategory);
       <input 
         type="number" 
         min="0"
+         name="children"
+  value={formData.children}
+  onChange={handleChange}
         className="w-full px-4 md:px-6 py-3 md:py-4 rounded-xl border-2 border-pink-300 focus:border-[#912082] focus:outline-none transition bg-white font-semibold text-sm md:text-base" 
         placeholder="e.g., 1"
       />
@@ -385,11 +481,15 @@ const categories = Object.keys(toursByCategory);
 
   <div>
     <label className="block text-sm font-bold text-gray-700 mb-2">Your Query</label>
-    <textarea 
-      rows="4" 
-      className="w-full px-4 md:px-6 py-3 md:py-4 rounded-xl border-2 border-pink-300 focus:border-[#912082] focus:outline-none transition resize-none bg-white font-semibold text-sm md:text-base" 
-      placeholder="Tell us about your travel plans..."
-    ></textarea>
+    <textarea
+  rows="4"
+  name="message"
+  value={formData.message}
+  onChange={handleChange}
+  className="w-full px-4 md:px-6 py-3 md:py-4 rounded-xl border-2 border-pink-300 focus:border-[#912082] focus:outline-none transition resize-none bg-white font-semibold text-sm md:text-base"
+  placeholder="Tell us about your travel plans..."
+></textarea>
+
   </div>
 
   <button 
@@ -399,6 +499,8 @@ const categories = Object.keys(toursByCategory);
     Send Message <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
   </button>
 </form>
+
+
             </div>
           </div>
         </div>

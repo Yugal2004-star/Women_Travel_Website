@@ -2,7 +2,10 @@ const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
+
 const enquiryRoutes = require("./routes/enquiry.routes");
+const contactRoutes = require("./routes/contact.routes");
+
 
 const app = express();
 
@@ -10,6 +13,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api", enquiryRoutes);
+app.use("/api", contactRoutes);
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
