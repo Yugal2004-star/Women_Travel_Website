@@ -34,30 +34,30 @@ const EnquiryModal = ({ isOpen, onClose, tourData = null }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    
-    // Here you can add your form submission logic
-    // For example, send to an API or email service
-    
-    alert('Thank you for your enquiry! We will get back to you soon.');
-    onClose();
-    
-    // Reset form
-    setFormData({
-      tourName: '',
-      tourId: '',
-      name: '',
-      phone: '',
-      email: '',
-      startDate: '',
-      numberOfDays: '',
-      numberOfAdults: '1',
-      numberOfChildren: '0',
-      query: ''
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const response = await fetch("http://localhost:5000/api/enquiry", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
     });
-  };
+
+    const data = await response.json();
+
+    if (data.success) {
+      alert("Thank you for your enquiry! We will contact you soon.");
+      onClose();
+    } else {
+      alert("Failed to send enquiry. Please try again.");
+    }
+  } catch (error) {
+    alert("Server error. Please try later.");
+  }
+};
 
   if (!isOpen) return null;
 
